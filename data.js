@@ -121,7 +121,7 @@ window.trackList = [
   { id: 'artificial-intelligence', num: '06', title: 'Artificial Intelligence', color: '#f472b6', desc: 'الذكاء الاصطناعي وتعلم الآلة ومعالجة اللغة الطبيعية', official: true },
   { id: 'electronics', num: '07', title: 'Electronics', color: '#f97316', desc: 'الإلكترونيات والأنظمة المدمجة وتصميم FPGA', official: true },
   { id: 'digital-arts', num: '08', title: 'Digital Arts', color: '#fb923c', desc: 'التصميم الرقمي والجرافيك والموشن جرافيك', official: true },
-  { id: 'digital-marketing', num: '09', title: 'Digital Marketing', color: '#22d3ee', desc: 'التسويق الرقمي وتحسين محركات البحث', official: false },
+  { id: 'digital-marketing', num: '09', title: 'Digital Marketing', color: '#22d3ee', desc: 'التسويق الرقمي وتحسين محركات البحث', official: true },
 ];
 
 window.trackContent = {
@@ -378,7 +378,8 @@ window.trackContent = {
       levels: [
         { year: 1, title: 'UI & UX Design', titleAr: 'تصميم واجهات المستخدم', moduleRef: 'ui-ux' },
         { year: 2, title: 'Web Design', titleAr: 'تصميم الويب', moduleRef: 'web-fund' },
-        { year: 3, title: 'Full Stack Web Development', titleAr: 'تطوير الويب المتكامل (MEAN Stack)', moduleRef: null }
+        { year: 3, title: 'Full Stack Web Development (MEAN Stack)', titleAr: 'تطوير الويب المتكامل (MEAN Stack)', moduleRef: null },
+        { year: 3, title: 'Full Stack Web Development (PHP)', titleAr: 'تطوير الويب المتكامل (PHP)', moduleRef: 'fullstack-php' }
       ]
     },
     intro: {
@@ -482,8 +483,16 @@ window.trackContent = {
         mistakes: ['تجاهل Testing', 'إهمال Documentation', 'عدم استخدام Version Control بشكل صحيح'],
         summary: 'هندسة البرمجيات تحول الكود العادي إلى كود احترافي.'
       },
+      { id: 'fullstack-php', title: 'Full Stack Web Development (PHP) — المستوى الثالث الرسمي', level: 'متوسط-متقدم', time: '15 ساعة', cert: 'Zend PHP / Laravel',
+        overviewAr: 'تطوير الويب المتكامل باستخدام PHP مع Laravel: بناء REST APIs، إدارة قواعد البيانات، المصادقة، ونشر التطبيقات.',
+        overviewEn: 'Full Stack Web Development with PHP and Laravel framework: building REST APIs, database management, authentication, and application deployment.',
+        why: 'PHP يشغل أكثر من 77% من مواقع الويب (WordPress, Facebook الأصلي). Laravel هو أشهر إطار عمل PHP.',
+        concepts: ['PHP Syntax & OOP', 'Laravel MVC Architecture', 'Eloquent ORM & Migrations', 'Blade Templating', 'REST API with Laravel', 'Middleware & Auth (Sanctum)'],
+        tools: ['PHP', 'Laravel', 'MySQL / MariaDB', 'Composer', 'Postman', 'PHPUnit'],
+        applications: ['WordPress (43% من الإنترنت)', 'Laravel للتطبيقات المؤسسية', 'E-commerce (WooCommerce)'],
+        mistakes: ['عدم اتباع PSR Standards', 'إهمال الـ Validation', 'كتابة SQL مباشرة بدون Eloquent'],
+        summary: 'PHP مع Laravel الخيار الأمثل للمشاريع الكبيرة. أتقنها لتكون Full Stack متكامل.' },
     ],
-    glossary: [
       { term: 'Algorithm', arabic: 'خوارزمية', explanation: 'خطوات محددة لحل مشكلة', category: 'أساسيات' },
       { term: 'Variable', arabic: 'متغير', explanation: 'مكان في الذاكرة يخزن قيمة', category: 'أساسيات' },
       { term: 'Function', arabic: 'دالة', explanation: 'قطعة كود تقوم بمهمة محددة', category: 'أساسيات' },
@@ -1567,7 +1576,11 @@ window.trackContent = {
     official: {
       targetAudience: 'BIS, Mass Communication, Fine Arts, Applied Arts',
       softSkills: 'Freelance',
-      note: '(إضافة) هذا المسار ليس من المسارات الرسمية للبرنامج - This track is an addition, not part of the official program',
+      levels: [
+        { year: 1, title: 'Digital Marketing Fundamentals', titleAr: 'أساسيات التسويق الرقمي', moduleRef: 'marketing-fundamentals' },
+        { year: 2, title: 'Advanced Digital Marketing & Paid Ads', titleAr: 'التسويق الرقمي المتقدم والإعلانات المدفوعة', moduleRef: null },
+        { year: 3, title: 'Digital Marketing Strategy & Analytics', titleAr: 'استراتيجية التسويق الرقمي والتحليلات', moduleRef: null }
+      ]
     },
     intro: {
       title: 'Digital Marketing Track',
