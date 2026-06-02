@@ -278,6 +278,34 @@ header h2 span{color:var(--primary-light)}
 /* Gradient Separators */
 .grad-sep{height:1px;background:linear-gradient(90deg,transparent,var(--primary),var(--secondary),transparent);margin:36px 0;border:none;opacity:0.4}
 
+/* Program Overview */
+.program-overview{background:var(--glass);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:1px solid rgba(255,255,255,0.04);border-radius:var(--radius);padding:28px;margin-bottom:40px;animation:slideUp 0.4s ease}
+.prog-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:14px;margin-bottom:20px}
+.prog-card{background:var(--card);border-radius:var(--radius-sm);padding:16px;border:1px solid rgba(255,255,255,0.03);transition:var(--trans)}
+.prog-card:hover{border-color:rgba(108,92,231,0.12);transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,0,0,0.1)}
+.prog-card h5{color:var(--primary-light);font-size:0.88rem;margin-bottom:6px;font-weight:600}
+.prog-card p{color:var(--text-sec);font-size:0.84rem;line-height:1.6}
+.prog-sub{color:var(--text-muted);font-size:0.78rem}
+.prog-section{background:var(--card);border-radius:var(--radius-sm);padding:18px 20px;margin-bottom:12px;border:1px solid rgba(255,255,255,0.03)}
+.prog-section h5{color:var(--primary-light);font-size:0.92rem;margin-bottom:10px;font-weight:600}
+.prog-section ul{list-style:none;padding:0}
+.prog-section ul li{padding:6px 0;font-size:0.84rem;color:var(--text-sec);display:flex;align-items:flex-start;gap:10px;line-height:1.5}
+.prog-section ul li::before{content:'◆';color:var(--secondary);font-size:0.4rem;margin-top:7px;flex-shrink:0}
+.prog-source{text-align:center;padding:16px 0 4px;color:var(--text-muted);font-size:0.78rem}
+.prog-source a{color:var(--primary-light)}
+.official-badge{display:inline-block;padding:2px 10px;border-radius:10px;font-size:0.65rem;font-weight:600;background:rgba(16,185,129,0.12);color:#34d399;border:1px solid rgba(16,185,129,0.15);letter-spacing:0.3px}
+.addition-badge{display:inline-block;padding:2px 10px;border-radius:10px;font-size:0.65rem;font-weight:600;background:rgba(245,158,11,0.12);color:#fbbf24;border:1px solid rgba(245,158,11,0.15);letter-spacing:0.3px}
+
+/* Official Info Badge in Track View */
+.official-info-box{background:linear-gradient(135deg,rgba(16,185,129,0.04),rgba(108,92,231,0.04));border:1px solid rgba(16,185,129,0.1);border-radius:var(--radius);padding:20px;margin-bottom:20px;position:relative}
+.official-info-box .oi-title{color:#34d399;font-size:0.85rem;font-weight:700;margin-bottom:12px;display:flex;align-items:center;gap:8px}
+.official-info-box .oi-title::before{content:'🏛️';font-size:0.9rem}
+.official-info-box .oi-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.official-info-box .oi-item{background:rgba(10,14,26,0.4);border-radius:var(--radius-sm);padding:12px 14px;border:1px solid rgba(255,255,255,0.03)}
+.official-info-box .oi-item h6{color:var(--primary-light);font-size:0.8rem;margin-bottom:6px;font-weight:600}
+.official-info-box .oi-item p{color:var(--text-sec);font-size:0.82rem;line-height:1.5}
+.official-info-box .oi-item .level-pill{display:inline-block;padding:3px 12px;border-radius:10px;font-size:0.72rem;background:rgba(16,185,129,0.1);color:#34d399;margin:2px;border:1px solid rgba(16,185,129,0.08)}
+
 /* Responsive */
 @media(max-width:768px){
   .hero h1{font-size:1.7rem}
@@ -302,6 +330,8 @@ header h2 span{color:var(--primary-light)}
   .track-card .btn{opacity:1;transform:none}
   #backToTop{bottom:20px;right:20px;width:42px;height:42px;font-size:1rem}
   .section-title{font-size:1.1rem}
+  .prog-grid{grid-template-columns:1fr 1fr}
+  .official-info-box .oi-grid{grid-template-columns:1fr}
 }
 @media(max-width:480px){
   .hero h1{font-size:1.35rem}
@@ -312,6 +342,9 @@ header h2 span{color:var(--primary-light)}
   .tab-btn{font-size:0.68rem;padding:6px 10px}
   header h2{font-size:0.85rem}
   .track-header h1{font-size:1.5rem}
+  .prog-grid{grid-template-columns:1fr}
+  .program-overview{padding:18px}
+  .prog-section{padding:14px 16px}
 }
 </style>
 </head>
@@ -350,6 +383,8 @@ function init(){
 
 function router(){
   var hash = window.location.hash.slice(1) || 'home';
+  // Redirect old data-science-ai hash to new data-science hash
+  if(hash === 'data-science-ai') { window.location.hash = 'data-science'; return; }
   if(hash === 'home') { showHome(); return; }
   var track = window.trackList.find(function(t){ return t.id === hash; });
   if(track) { showTrack(hash); }
@@ -377,15 +412,49 @@ function scrollToTop(){ window.scrollTo({top:0,behavior:'smooth'}); }
 function renderHome(){
   var el = document.getElementById('homeView');
   var list = window.trackList;
+  var pi = window.programInfo;
+  var official = list.filter(function(t){ return t.official; });
   var stats = [
-    {num: list.length, label: 'المسارات التدريبية'},
-    {num: '30+', label: 'الوحدات الدراسية'},
-    {num: '200+', label: 'مفهوم ومصطلح'}
+    {num: official.length, label: 'المسارات الرسمية'},
+    {num: '120', label: 'ساعة تدريبية'},
+    {num: '4', label: 'أسابيع'}
   ];
   el.innerHTML = '<div class="hero"><h1>NTI Learning Platform</h1><p>منصة التدريب الصيفي للمعهد القومي للاتصالات — دليل شامل لمساراتك التدريبية</p></div><div class="stats">' +
     stats.map(function(s){ return '<div class="stat-item"><div class="stat-num">'+s.num+'</div><div class="stat-label">'+s.label+'</div></div>'; }).join('') +
-    '</div><div class="track-grid">' +
-    list.map(function(t){ return '<div class="track-card" onclick="window.location.hash=\''+t.id+'\'" style="--card-accent:'+t.color+';--card-accent-bg:'+t.color+'18;--card-glow:'+t.color+'33"><div class="track-num">مسار #'+t.num+'</div><div class="icon-wrap">'+(t.num < 10 ? '0'+t.num : t.num)+'</div><h3>'+t.title+'</h3><p>'+t.desc+'</p><button class="btn btn-primary btn-sm">ابدأ التعلم</button></div>'; }).join('') +
+    '</div>' +
+    // Program Overview Section
+    '<div class="program-overview">' +
+      '<h3 class="section-title">' + pi.titleAr + ' — ' + pi.title + '</h3>' +
+      '<div class="prog-grid">' +
+        '<div class="prog-card"><h5>🕒 المدة</h5><p>' + pi.duration + '<br><span class="prog-sub">' + pi.hours + ' ساعة (' + pi.techHours + ' تقنية + ' + pi.softHours + ' مهارات)</span></p></div>' +
+        '<div class="prog-card"><h5>💰 التكلفة</h5><p>' + pi.cost + '</p></div>' +
+        '<div class="prog-card"><h5>👥 الجهات المنظمة</h5><p>' + pi.partner1.full + ' + ' + pi.partner2.full + '</p></div>' +
+        '<div class="prog-card"><h5>🌍 التغطية</h5><p>' + pi.coverage + '</p></div>' +
+        '<div class="prog-card"><h5>💻 طرق التدريب</h5><p>' + pi.delivery.join(' - ') + '</p></div>' +
+        '<div class="prog-card"><h5>📅 الموعد</h5><p>' + pi.agenda + '</p></div>' +
+      '</div>' +
+      '<div class="prog-section">' +
+        '<h5>🎯 الأهداف (Objectives)</h5><ul>' + pi.objectives.map(function(o){ return '<li>' + o + '</li>'; }).join('') + '</ul>' +
+      '</div>' +
+      '<div class="prog-section">' +
+        '<h5>👨‍🎓 شروط القبول (Eligibility)</h5><p style="color:var(--text-sec);margin-bottom:8px"><strong>السنوات:</strong> ' + pi.eligibility.years.join(' - ') + '</p><p style="color:var(--text-sec);margin-bottom:8px"><strong>الكليات:</strong></p><ul>' + pi.eligibility.faculties.map(function(f){ return '<li>' + f + '</li>'; }).join('') + '</ul>' +
+      '</div>' +
+      '<div class="prog-section">' +
+        '<h5>🎁 المميزات (Benefits)</h5><ul>' + pi.benefits.map(function(b){ return '<li>' + b + '</li>'; }).join('') + '</ul>' +
+      '</div>' +
+      '<div class="prog-section">' +
+        '<h5>📝 التسجيل (Registration)</h5><p>رابط التسجيل: <a href="' + pi.registration.link + '" target="_blank" rel="noopener">' + pi.registration.link + '</a></p><p style="color:var(--text-sec);font-size:0.85rem">ملاحظة: ' + pi.registration.noteAr + '</p>' +
+      '</div>' +
+      '<div class="prog-section">' +
+        '<h5>🤝 التعاون والشراكات</h5><p style="color:var(--text-sec);font-size:0.85rem;line-height:1.7">' + pi.collaborationAr + '</p>' +
+      '</div>' +
+      '<div class="prog-source">المصدر الرسمي: <a href="' + pi.source + '" target="_blank" rel="noopener">nti.sci.eg/summertraining</a> | <a href="' + pi.sourceItida + '" target="_blank" rel="noopener">itida.gov.eg</a></div>' +
+    '</div>' +
+    '<h3 class="section-title">المسارات التدريبية</h3><div class="track-grid">' +
+    list.map(function(t){
+      var badge = t.official ? '<span class="official-badge">رسمي</span>' : '<span class="addition-badge">إضافة</span>';
+      return '<div class="track-card" onclick="window.location.hash=\''+t.id+'\'" style="--card-accent:'+t.color+';--card-accent-bg:'+t.color+'18;--card-glow:'+t.color+'33"><div class="track-num">' + badge + ' مسار #'+t.num+'</div><div class="icon-wrap">'+(t.num < 10 ? '0'+t.num : t.num)+'</div><h3>'+t.title+'</h3><p>'+t.desc+'</p><button class="btn btn-primary btn-sm">ابدأ التعلم</button></div>';
+    }).join('') +
     '</div>';
 }
 
@@ -409,7 +478,7 @@ function renderTrackView(id){
     '<div class="tab-content" id="tab-career"></div>' +
     '<div class="tab-content" id="tab-revision"></div>' +
     '</div>';
-  renderIntro(content.intro);
+  renderIntro(content.intro, content.official);
   renderModules(content.modules);
   renderGlossary(content.glossary);
   renderTools(content.tools);
@@ -429,9 +498,19 @@ function showTab(name){
   if(idx >= 0 && btns[idx]) btns[idx].classList.add('active');
 }
 
-function renderIntro(i){
+function renderIntro(i, official){
   var el = document.getElementById('tab-intro');
-  el.innerHTML = '<div class="def-grid"><div class="def-card"><h4>📖 التعريف باللغة العربية</h4><p>'+i.whatIs+'</p></div><div class="def-card"><h4>📖 Definition (English)</h4><p>'+i.whatIsEn+'</p></div></div>' +
+  var officialHtml = '';
+  if(official && official.targetAudience){
+    var levelsHtml = '';
+    if(official.levels){
+      levelsHtml = official.levels.map(function(l){ return '<span class="level-pill">سنة ' + l.year + ': ' + l.titleAr + '</span>'; }).join('');
+    }
+    var noteHtml = official.note ? '<div class="oi-item" style="grid-column:1/-1"><h6>ملاحظة</h6><p>' + official.note + '</p></div>' : '';
+    officialHtml = '<div class="official-info-box"><div class="oi-title">معلومات البرنامج الرسمي من ITIDA/NTI</div><div class="oi-grid"><div class="oi-item"><h6>🎯 الجمهور المستهدف</h6><p>' + official.targetAudience + '</p></div><div class="oi-item"><h6>🏅 مهارات إضافية</h6><p>' + official.softSkills + '</p></div>' + (levelsHtml ? '<div class="oi-item" style="grid-column:1/-1"><h6>📊 المستويات حسب السنة الدراسية</h6><p>' + levelsHtml + '</p></div>' : '') + noteHtml + '</div></div>';
+  }
+  el.innerHTML = officialHtml +
+    '<div class="def-grid"><div class="def-card"><h4>📖 التعريف باللغة العربية</h4><p>'+i.whatIs+'</p></div><div class="def-card"><h4>📖 Definition (English)</h4><p>'+i.whatIsEn+'</p></div></div>' +
     '<h3 class="section-title">لماذا هذا المسار مهم؟</h3><div class="importance-grid">' +
     i.importance.map(function(imp){ return '<div class="importance-item"><h5>'+imp.reason+'</h5><p>'+imp.detail+'</p></div>'; }).join('') +
     '</div><h3 class="section-title">التطبيقات والمجالات</h3><div class="tag-wrap">' +

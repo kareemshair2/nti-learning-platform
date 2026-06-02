@@ -1,16 +1,93 @@
-﻿window.trackList = [
-  { id: 'cybersecurity', num: '01', title: 'Cybersecurity', color: '#38bdf8', desc: 'حماية الأنظمة والشبكات والبيانات من الهجمات الرقمية' },
-  { id: 'software-development', num: '02', title: 'Software Development', color: '#4ade80', desc: 'تصميم وبناء وتطوير التطبيقات والبرمجيات' },
-  { id: 'data-science-ai', num: '03', title: 'Data Science & AI', color: '#fbbf24', desc: 'تحليل البيانات وبناء نماذج الذكاء الاصطناعي' },
-  { id: 'cloud-computing', num: '04', title: 'Cloud Computing', color: '#60a5fa', desc: 'الحوسبة السحابية وإدارة البنية التحتية' },
-  { id: 'systems-administration', num: '05', title: 'Systems Administration', color: '#a78bfa', desc: 'إدارة أنظمة التشغيل والخوادم والشبكات' },
-  { id: 'electronics', num: '06', title: 'Electronics & Embedded', color: '#f472b6', desc: 'الإلكترونيات والأنظمة المدمجة وإنترنت الأشياء' },
-  { id: 'digital-arts', num: '07', title: 'Digital Arts', color: '#fb923c', desc: 'التصميم الرقمي والجرافيك والموشن' },
-  { id: 'digital-marketing', num: '08', title: 'Digital Marketing', color: '#22d3ee', desc: 'التسويق الرقمي وتحسين محركات البحث' },
+﻿window.programInfo = {
+  title: 'NTI Summer Training Program',
+  titleAr: 'برنامج التدريب الصيفي',
+  partner1: { name: 'NTI', full: 'المعهد القومي للاتصالات', fullEn: 'National Telecommunication Institute' },
+  partner2: { name: 'ITIDA', full: 'هيئة تنمية صناعة تكنولوجيا المعلومات', fullEn: 'Information Technology Industry Development Agency' },
+  started: 2014,
+  duration: '4 أسابيع',
+  hours: 120,
+  techHours: 90,
+  softHours: 30,
+  delivery: ['عن بُعد (Online)', 'حضوري (Physical)'],
+  coverage: 'جميع محافظات مصر',
+  cost: 'مجاني بالكامل - Free Scholarship',
+  source: 'https://www.nti.sci.eg/summertraining/',
+  sourceItida: 'https://itida.gov.eg/english/programs/studentsummertraining/pages/default.aspx',
+  objectives: [
+    'سد الفجوة بين الجامعات ومتطلبات سوق العمل - Bridge the gap between universities and labor market requirements',
+    'ضمان مشاركة قطاع تكنولوجيا المعلومات بتوفير المهارات التقنية للطلاب - Ensure ICT sector participation by providing necessary tech skills',
+    'بناء المهارات التقنية والشخصية للطلاب - Build students technical and soft skills',
+    'نشر ثقافة العمل الحر بين الطلاب - Spread business culture among students'
+  ],
+  eligibility: {
+    years: ['الفرقة الأولى (First Year)', 'الفرقة الثانية (Second Year)', 'الفرقة الثالثة (Third Year)'],
+    faculties: [
+      'الهندسة (حاسبات ونظم، اتصالات، إلكترونيات) - Engineering (Computer & Systems, Communications, Electronics)',
+      'حاسبات ومعلومات - Computers & Information',
+      'ذكاء اصطناعي - Artificial Intelligence',
+      'BIS - نظم معلومات إدارية',
+      'الأعمال - Business Informatics'
+    ],
+    facultiesExtra: {
+      digitalArts: ['إعلام - Mass Communication', 'فنون جميلة - Fine Arts', 'فنون تطبيقية - Applied Arts', 'تربية نوعية (فنية) - Specific Education (Art Education)']
+    }
+  },
+  benefits: [
+    'شهادات معتمدة من ITIDA/NTI بناءً على الحضور - Certificates based on attendance stating completion of summer training',
+    'مساعدة الطلاب في الحصول على الساعات المعتمدة المطلوبة من كلياتهم - Help students obtain credit hours required by faculties',
+    'تتحمل ITIDA تكلفة الامتحانات الدولية بعد الاجتياز - ITIDA pays cost of international exams after passing'
+  ],
+  registration: {
+    link: 'https://www.nti.sci.eg/summertraining/',
+    noteAr: 'يتطلب تقديم تعهد (Pledge) قبل التسجيل',
+    noteEn: 'Requires submitting a Pledge document before registration'
+  },
+  agenda: 'فترة الإجازة الصيفية: يونيو، يوليو، أغسطس، سبتمبر - Summer vacation: June, July, August, September',
+  collaborationAr: 'تتعاون ITIDA مع شركات الاتصالات والتكنولوجيا في إطار المسؤولية المجتمعية للشركات (CSR)، وأيضًا مع المعهد القومي للاتصالات (NTI) لخبرته التدريبية الواسعة وشراكاته مع شركات التكنولوجيا العالمية.',
+  collaborationEn: 'ITIDA collaborates with telecom and technology companies through CSR initiatives, and with NTI for its wide technical training experience and diverse partnerships with global tech companies.',
+  programs: {
+    itidaNti: {
+      name: 'ITIDA-NTI Summer Training',
+      descriptionAr: 'البرنامج المشترك بين ITIDA والمعهد القومي للاتصالات',
+      descriptionEn: 'Joint summer training program between ITIDA and NTI'
+    },
+    itidaSystel: {
+      name: 'ITIDA-Systel Training Program',
+      descriptionAr: 'برنامج مشترك بين ITIDA وشركة Systel لتخصصات هندسة الاتصالات والحاسبات وعلوم الحاسب',
+      descriptionEn: 'Joint program between ITIDA and Systel for communications engineering, computer engineering and computer science',
+      technicalHours: 90,
+      softSkillsHours: 30,
+      softSkillsContentAr: 'المهارات العامة: التواصل، المقابلات الشخصية، العرض والتقديم. مهارات القيادة: العمل الجماعي، اتخاذ القرارات وحل المشكلات، إدارة الوقت. مهارات العمل الحر: مقدمة في أمن المعلومات والخصوصية.',
+      softSkillsContentEn: 'General Skills: Communication, Interview, Presentation. Leadership: Teamwork, Decision-making, Time Management. Freelancing: Introduction to information security and privacy.',
+      technicalContentAr: 'مقدمة في الاتصالات - الاتصالات في السلامة العامة - الاتصالات بالميكروويف وال宽带 - اتصالات الألياف الضوئية - أنظمة CCTV - الاتصالات الفضائية - ورشة عمل عملية',
+      technicalContentEn: 'Introduction to Telecommunications - Public Safety Communication - Microwave and Broadband Communication - Fiber Optics Communication - CCTV Systems - Satellite Communication - Practical Workshop'
+    }
+  }
+};
+
+window.trackList = [
+  { id: 'cybersecurity', num: '01', title: 'Cybersecurity', color: '#38bdf8', desc: 'حماية الأنظمة والشبكات والبيانات من الهجمات الرقمية', official: true },
+  { id: 'software-development', num: '02', title: 'Software Development', color: '#4ade80', desc: 'تصميم وبناء وتطوير التطبيقات والبرمجيات', official: true },
+  { id: 'data-science', num: '03', title: 'Data Science', color: '#fbbf24', desc: 'تحليل البيانات والاستفادة منها في اتخاذ القرارات', official: true },
+  { id: 'cloud-computing', num: '04', title: 'Cloud Computing', color: '#60a5fa', desc: 'الحوسبة السحابية وإدارة البنية التحتية', official: true },
+  { id: 'systems-administration', num: '05', title: 'Systems Administration', color: '#a78bfa', desc: 'إدارة أنظمة التشغيل والخوادم والشبكات', official: true },
+  { id: 'artificial-intelligence', num: '06', title: 'Artificial Intelligence', color: '#f472b6', desc: 'الذكاء الاصطناعي وتعلم الآلة ومعالجة اللغة الطبيعية', official: true },
+  { id: 'electronics', num: '07', title: 'Electronics', color: '#f97316', desc: 'الإلكترونيات والأنظمة المدمجة وتصميم FPGA', official: true },
+  { id: 'digital-arts', num: '08', title: 'Digital Arts', color: '#fb923c', desc: 'التصميم الرقمي والجرافيك والموشن جرافيك', official: true },
+  { id: 'digital-marketing', num: '09', title: 'Digital Marketing', color: '#22d3ee', desc: 'التسويق الرقمي وتحسين محركات البحث', official: false },
 ];
 
 window.trackContent = {
   cybersecurity: {
+    official: {
+      targetAudience: 'Engineering & CS',
+      softSkills: 'Soft Skills',
+      levels: [
+        { year: 1, title: 'Network Infrastructure', titleAr: 'البنية التحتية للشبكات' },
+        { year: 2, title: 'Network Security', titleAr: 'أمن الشبكات' },
+        { year: 3, title: 'Fortinet Cybersecurity', titleAr: 'الأمن السيبراني من Fortinet' }
+      ]
+    },
     intro: {
       title: 'Cybersecurity Track',
       subtitle: 'الأمن السيبراني',
@@ -239,6 +316,15 @@ window.trackContent = {
     },
   },
   'software-development': {
+    official: {
+      targetAudience: 'Engineering & CS, BIS',
+      softSkills: 'Freelance',
+      levels: [
+        { year: 1, title: 'UI & UX Design', titleAr: 'تصميم واجهات المستخدم' },
+        { year: 2, title: 'Web Design', titleAr: 'تصميم الويب' },
+        { year: 3, title: 'Full Stack Web Development', titleAr: 'تطوير الويب المتكامل' }
+      ]
+    },
     intro: {
       title: 'Software Development Track',
       subtitle: 'تطوير البرمجيات',
@@ -462,12 +548,21 @@ window.trackContent = {
       softwareEngineering: ['SOLID Principles', 'Design Patterns (Singleton, Factory, MVC)', 'Agile/Scrum', 'Code Review'],
     },
   },
-  'data-science-ai': {
+  'data-science': {
+    official: {
+      targetAudience: 'Engineering & CS, BIS',
+      softSkills: 'Freelance / Soft Skills',
+      levels: [
+        { year: 1, title: 'Data Analytics / Programming using Python', titleAr: 'تحليل البيانات / البرمجة باستخدام Python' },
+        { year: 2, title: 'Advanced Data Analytics / Big Data Analysis', titleAr: 'تحليل بيانات متقدم / تحليل البيانات الضخمة' },
+        { year: 3, title: 'Internet of Things (IoT) Applications', titleAr: 'تطبيقات إنترنت الأشياء' }
+      ]
+    },
     intro: {
-      title: 'Data Science & AI Track',
-      subtitle: 'علوم البيانات والذكاء الاصطناعي',
-      whatIs: 'علوم البيانات هي استخراج المعرفة والرؤى من البيانات. الذكاء الاصطناعي هو جعل الآلات تتعلم وتفكر مثل البشر.',
-      whatIsEn: 'Data Science combines statistics, mathematics, and programming to extract insights from data. AI enables machines to simulate human intelligence.',
+      title: 'Data Science Track',
+      subtitle: 'علوم البيانات',
+      whatIs: 'علوم البيانات هي استخراج المعرفة والرؤى من البيانات باستخدام الإحصاء والبرمجة والتعلم الآلي.',
+      whatIsEn: 'Data Science combines statistics, mathematics, and programming to extract insights from data and support decision-making.',
       importance: [
         { reason: 'اتخاذ القرارات', detail: 'Netflix و Amazon تعتمدان على البيانات لكل قرار' },
         { reason: 'توفير التكاليف', detail: 'الصيانة التنبؤية توفر ملايين الدولارات' },
@@ -620,6 +715,15 @@ window.trackContent = {
     },
   },
   'cloud-computing': {
+    official: {
+      targetAudience: 'Engineering & CS',
+      softSkills: 'Soft Skills',
+      levels: [
+        { year: 1, title: 'Cloud Essentials', titleAr: 'أساسيات السحابة' },
+        { year: 2, title: 'Cloud Architect', titleAr: 'معمارية السحابة' },
+        { year: 3, title: 'Building Datacenters', titleAr: 'بناء مراكز البيانات' }
+      ]
+    },
     intro: {
       title: 'Cloud Computing Track',
       subtitle: 'الحوسبة السحابية',
@@ -757,6 +861,14 @@ window.trackContent = {
     },
   },
   'systems-administration': {
+    official: {
+      targetAudience: 'Engineering & CS',
+      softSkills: 'Soft Skills',
+      levels: [
+        { year: 1, title: 'Linux Red Hat Administration', titleAr: 'إدارة لينكس Red Hat' },
+        { year: 2, title: 'Windows Server Administration', titleAr: 'إدارة ويندوز سيرفر' }
+      ]
+    },
     intro: {
       title: 'Systems Administration Track',
       subtitle: 'إدارة الأنظمة',
@@ -915,6 +1027,14 @@ window.trackContent = {
     },
   },
   'electronics': {
+    official: {
+      targetAudience: 'Engineering & CS',
+      softSkills: 'Freelance',
+      levels: [
+        { year: 1, title: 'Microcontroller-Based Systems', titleAr: 'أنظمة الميكروكنترولر' },
+        { year: 2, title: 'Digital Design using FPGA', titleAr: 'التصميم الرقمي باستخدام FPGA' }
+      ]
+    },
     intro: {
       title: 'Electronics Track',
       subtitle: 'الإلكترونيات',
@@ -1065,7 +1185,160 @@ window.trackContent = {
       careerTips: [{ tip: 'ابدأ بمشروع عملي', why: 'تصميم دائرة وتنفيذها يبني ثقة ومهارة' }, { tip: 'تعلم قراءة Datasheet', why: 'كل معلومة تحتاجها موجودة في الداتاشيت' }, { tip: 'استخدم منصة EasyEDA', why: 'مجانية وسحابية ومنتج نهائي JLCPCB' }],
     },
   },
+  'artificial-intelligence': {
+    official: {
+      targetAudience: 'Engineering & CS, BIS',
+      softSkills: 'Freelance',
+      levels: [
+        { year: 1, title: 'Machine Learning', titleAr: 'تعلم الآلة' },
+        { year: 2, title: 'AI For Business / Computer Vision', titleAr: 'AI للأعمال / رؤية حاسوبية' },
+        { year: 3, title: 'Natural Language Processing (NLP)', titleAr: 'معالجة اللغة الطبيعية' }
+      ]
+    },
+    intro: {
+      title: 'Artificial Intelligence Track',
+      subtitle: 'الذكاء الاصطناعي',
+      whatIs: 'الذكاء الاصطناعي (AI) هو فرع من علوم الحاسب يهدف إلى إنشاء آلات وأنظمة ذكية تحاكي القدرات البشرية مثل التعلم والتفكير واتخاذ القرارات. يشمل AI مجالات متعددة مثل تعلم الآلة (ML) والرؤية الحاسوبية (CV) ومعالجة اللغة الطبيعية (NLP).',
+      whatIsEn: 'Artificial Intelligence is the simulation of human intelligence in machines that are programmed to think, learn, and make decisions. It encompasses Machine Learning, Deep Learning, Computer Vision, and Natural Language Processing.',
+      importance: [
+        { reason: 'تحول رقمي', detail: 'AI يقود التحول الرقمي في كل الصناعات' },
+        { reason: 'أتمتة ذكية', detail: 'ChatGPT و Midjourney يغيران طريقة عملنا' },
+        { reason: 'توفير التكاليف', detail: 'AI يقلل تكاليف التشغيل بنسبة تصل إلى 30%' },
+        { reason: 'الريادة', detail: 'الشركات التي تتبنى AI تتفوق على منافسيها' },
+      ],
+      applications: ['ChatGPT و LLMs', 'السيارات ذاتية القيادة (Tesla)', 'التشخيص الطبي بالصور', 'المساعدات الصوتية (Siri, Alexa)', 'أنظمة التوصية (Netflix, YouTube)'],
+      careers: [
+        { title: 'AI Engineer', salary: '20k - 40k ج.م', salaryInt: '$100k - $150k' },
+        { title: 'ML Engineer', salary: '18k - 40k ج.م', salaryInt: '$120k - $180k' },
+        { title: 'Computer Vision Engineer', salary: '20k - 45k ج.م', salaryInt: '$110k - $160k' },
+        { title: 'NLP Engineer', salary: '20k - 45k ج.م', salaryInt: '$120k - $170k' },
+        { title: 'AI Research Scientist', salary: '25k - 50k+ ج.م', salaryInt: '$150k - $200k+' },
+        { title: 'AI Product Manager', salary: '25k - 50k ج.م', salaryInt: '$130k - $180k' },
+        { title: 'LLM Engineer', salary: '25k - 55k+ ج.م', salaryInt: '$140k - $200k+' },
+      ],
+      roadmap: [
+        { level: 'Beginner', period: '0-6 Months', items: ['Python Programming', 'Mathematics (Linear Algebra, Calculus)', 'Statistics & Probability', 'Introduction to ML'] },
+        { level: 'Foundation', period: '6-12 Months', items: ['Machine Learning Algorithms', 'Scikit-learn', 'TensorFlow / PyTorch', 'Neural Networks'] },
+        { level: 'Intermediate', period: '12-18 Months', items: ['Deep Learning', 'CNNs (Computer Vision)', 'RNNs / Transformers (NLP)', 'Model Deployment'] },
+        { level: 'Advanced', period: '18-24 Months', items: ['LLMs & Generative AI', 'MLOps', 'Reinforcement Learning', 'AI Research'] },
+        { level: 'Professional', period: '24+ Months', items: ['AI Architecture', 'Multi-modal AI', 'AI Ethics & Safety', 'Team Leadership'] },
+      ],
+    },
+    modules: [
+      { id: 'ml-fund', title: 'Machine Learning Fundamentals', level: 'مبتدئ-متوسط', time: '20 ساعة', cert: 'TensorFlow',
+        overviewAr: 'تعلم الآلة: بناء نماذج تتعلم من البيانات للتنبؤ واتخاذ القرارات.',
+        overviewEn: 'Machine Learning enables systems to learn and improve from experience without being explicitly programmed.',
+        why: 'ML هو أساس الذكاء الاصطناعي الحديث. كل تطبيقات AI تعتمد على ML.', concepts: ['Supervised Learning', 'Unsupervised Learning', 'Regression', 'Classification', 'Clustering', 'Model Evaluation (Accuracy, Precision, Recall)'], tools: ['Scikit-learn', 'XGBoost', 'NumPy', 'Jupyter'], applications: ['توقع أسعار العقارات', 'تصنيف البريد المزعج', 'تقسيم العملاء لشرائح'], mistakes: ['Overfitting', 'تجاهل Feature Engineering', 'عدم تقسيم البيانات بشكل صحيح'], summary: 'ML هو جوهر AI - تعلم من البيانات واتخذ قرارات ذكية.' },
+      { id: 'ai-business', title: 'AI For Business', level: 'مبتدئ-متوسط', time: '10 ساعة', cert: 'None',
+        overviewAr: 'تطبيقات الذكاء الاصطناعي في مجال الأعمال: كيف تستخدم الشركات AI لتحسين القرارات وزيادة الكفاءة.',
+        overviewEn: 'AI For Business covers how organizations leverage AI technologies to improve decision-making, automate processes, and gain competitive advantage.',
+        why: 'الشركات التي تتبنى AI تتفوق على منافسيها بنسبة تصل إلى 40% في الإنتاجية.', concepts: ['AI Strategy & Roadmap', 'ROI of AI Projects', 'AI in Marketing & Sales', 'AI in Supply Chain & Operations', 'AI in Customer Service (Chatbots)', 'AI in Finance & Risk', 'Data-Driven Decision Making', 'AI Ethics & Governance'], tools: ['Power BI with AI', 'Salesforce Einstein', 'Google Analytics AI', 'ChatGPT for Business', 'HubSpot AI'], applications: ['Netflix: توصيات مخصصة', 'Amazon: تحسين سلسلة التوريد', 'البنوك: كشف الاحتيال', 'شركات الاتصالات: خدمة عملاء ذكية'], mistakes: ['البدء بدون استراتيجية واضحة', 'إهمال جودة البيانات', 'توقع نتائج فورية بدون تدريب', 'تجاهل أخلاقيات AI'], summary: 'AI يغير قواعد اللعبة في عالم الأعمال - ابدأ باستراتيجية واضحة.' },
+      { id: 'dl-ai', title: 'Deep Learning & Neural Networks', level: 'متوسط-متقدم', time: '20 ساعة', cert: 'TensorFlow',
+        overviewAr: 'الشبكات العصبية العميقة: نماذج معقدة مستوحاة من الدماغ البشري.',
+        overviewEn: 'Deep Neural Networks with multiple layers that can learn hierarchical representations of data.',
+        why: 'DL أساس الرؤية الحاسوبية ومعالجة اللغة والجيل الجديد من AI.', concepts: ['Neural Networks Architecture', 'Backpropagation & Gradient Descent', 'CNNs (Images)', 'RNNs / LSTMs (Sequences)', 'Transformers', 'Transfer Learning'], tools: ['TensorFlow', 'PyTorch', 'Keras', 'Hugging Face'], applications: ['ChatGPT', 'Tesla Autopilot', 'Google Photos', 'AlphaGo'], mistakes: ['عدم كفاية البيانات', 'Learning Rate غير مناسب', 'تجاهل Overfitting'], summary: 'الشبكات العصبية العميقة تعطي الآلات قدرات تشبه البشر.' },
+      { id: 'cv-ai', title: 'Computer Vision', level: 'متقدم', time: '15 ساعة', cert: 'None',
+        overviewAr: 'الرؤية الحاسوبية: تمكين الآلات من فهم وتحليل الصور والفيديو.',
+        overviewEn: 'Computer Vision enables machines to interpret and understand visual information from the world.',
+        why: 'من السيارات ذاتية القيادة إلى التشخيص الطبي، CV يغير العالم.', concepts: ['Image Processing', 'Object Detection (YOLO)', 'Image Segmentation', 'Face Recognition', 'Image Generation (GANs, Diffusion)'], tools: ['OpenCV', 'YOLO (Ultralytics)', 'Detectron2', 'Stable Diffusion'], applications: ['Tesla Autopilot', 'التشخيص الطبي بالأشعة', 'Google Photos'], mistakes: ['عدم استخدام Transfer Learning', 'بيانات غير متوازنة', 'إهمال Augmentation'], summary: 'CV تعطي الآلات عيونًا ترى وتفهم العالم.' },
+      { id: 'nlp-ai', title: 'Natural Language Processing (NLP)', level: 'متقدم', time: '15 ساعة', cert: 'Hugging Face',
+        overviewAr: 'معالجة اللغة الطبيعية: تمكين الآلات من فهم وتوليد اللغة البشرية.',
+        overviewEn: 'NLP enables machines to read, understand, and generate human language text.', why: 'ChatGPT, Google Translate, Siri كلها تعتمد على NLP.', concepts: ['Text Preprocessing', 'Word Embeddings (BERT, Word2Vec)', 'Text Classification', 'Named Entity Recognition', 'Transformers (GPT, BERT)', 'RAG (Retrieval-Augmented Generation)'], tools: ['NLTK', 'SpaCy', 'Hugging Face Transformers', 'LangChain', 'OpenAI API'], applications: ['ChatGPT', 'Google Translate', 'تحليل المشاعر', 'Chatbots'],
+        mistakes: ['تجاهل Fine-tuning', 'عدم معالجة النصوص بشكل صحيح', 'إهمال Prompt Engineering'], summary: 'NLP يجعل الآلات تفهم وتتحدث لغتك.' },
+      { id: 'gen-ai', title: 'Generative AI & LLMs', level: 'متقدم', time: '15 ساعة', cert: 'None',
+        overviewAr: 'AI التوليدي: نماذج تنتج محتوى جديد - نصوص، صور، فيديو، كود.',
+        overviewEn: 'Generative AI creates new content including text, images, video, audio, and code.',
+        why: 'ChatGPT حقق 100 مليون مستخدم في شهرين - هذه ثورة.', concepts: ['LLMs (GPT, LLaMA, Claude)', 'Prompt Engineering', 'RAG', 'Fine-tuning', 'AI Agents', 'Responsible AI'], tools: ['OpenAI API', 'LangChain', 'LlamaIndex', 'Hugging Face'], applications: ['ChatGPT / GitHub Copilot', 'Midjourney / DALL-E', 'AI Customer Support'], mistakes: ['Hallucinations (الهلوسة)', 'عدم التحقق من المخرجات', 'تجاهل الأمان والخصوصية'], summary: 'AI التوليدي يعيد تعريف الإبداع والإنتاجية.' },
+      { id: 'mlops-ai', title: 'MLOps & Model Deployment', level: 'متوسط-متقدم', time: '12 ساعة', cert: 'None',
+        overviewAr: 'إدارة دورة حياة نماذج AI من التدريب إلى النشر والمراقبة.',
+        overviewEn: 'MLOps manages the end-to-end lifecycle of machine learning models in production.',
+        why: 'أكثر من 80% من نماذج ML لا تصل إلى الإنتاج. MLOps يحل هذه المشكلة.', concepts: ['Model Versioning', 'CI/CD for ML', 'Model Monitoring & Drift', 'A/B Testing', 'Feature Store', 'Containerization'], tools: ['Docker', 'MLflow', 'Kubeflow', 'AWS SageMaker', 'Kubernetes'], applications: ['Netflix: تحديث نماذج التوصيات', 'Uber: نماذج التسعير الديناميكي'], mistakes: ['إهمال مراقبة النموذج بعد النشر', 'عدم توثيق التجارب', 'تجاهل Model Drift'], summary: 'MLOps يضمن أن نماذج AI تعمل بشكل موثوق في الإنتاج.' },
+    ],
+    glossary: [
+      { term: 'Artificial Intelligence', arabic: 'ذكاء اصطناعي', explanation: 'محاكاة الذكاء البشري في الآلات', category: 'أساسيات' },
+      { term: 'Machine Learning', arabic: 'تعلم آلي', explanation: 'نماذج تتعلم من البيانات بدون برمجة صريحة', category: 'أساسيات' },
+      { term: 'Deep Learning', arabic: 'تعلم عميق', explanation: 'شبكات عصبية متعددة الطبقات للتعلم من كميات كبيرة من البيانات', category: 'أساسيات' },
+      { term: 'Neural Network', arabic: 'شبكة عصبية', explanation: 'نموذج مستوحى من الدماغ البشري', category: 'أساسيات' },
+      { term: 'NLP', arabic: 'معالجة لغة طبيعية', explanation: 'تمكين الآلات من فهم وتوليد اللغة البشرية', category: 'تخصصات' },
+      { term: 'Computer Vision', arabic: 'رؤية حاسوبية', explanation: 'تحليل وفهم الصور والفيديو', category: 'تخصصات' },
+      { term: 'LLM', arabic: 'نموذج لغة كبير', explanation: 'GPT, LLaMA, Claude - نماذج نصوص ضخمة مدربة على تيرابايت من البيانات', category: 'تقنيات' },
+      { term: 'Transformer', arabic: 'محول', explanation: 'أحدث بنية في NLP (أساس GPT و BERT)', category: 'تقنيات' },
+      { term: 'Generative AI', arabic: 'AI توليدي', explanation: 'نماذج تنتج محتوى جديد (نصوص، صور، فيديو)', category: 'تقنيات' },
+      { term: 'RAG', arabic: 'توليد معزز بالاسترجاع', explanation: 'ربط LLM بقاعدة معرفة للحصول على إجابات دقيقة', category: 'تقنيات' },
+      { term: 'Prompt Engineering', arabic: 'هندسة المطالبات', explanation: 'فن صياغة الأوامر للحصول على أفضل نتائج من LLM', category: 'تقنيات' },
+      { term: 'Fine-tuning', arabic: 'ضبط دقيق', explanation: 'تدريب نموذج مدرب مسبقًا على بيانات خاصة', category: 'تقنيات' },
+      { term: 'Supervised Learning', arabic: 'تعلم خاضع للإشراف', explanation: 'تعلم من بيانات مصنفة (مدخلات + مخرجات معروفة)', category: 'أساسيات' },
+      { term: 'Unsupervised Learning', arabic: 'تعلم غير خاضع للإشراف', explanation: 'اكتشاف أنماط في بيانات غير مصنفة', category: 'أساسيات' },
+      { term: 'Reinforcement Learning', arabic: 'تعلم معزز', explanation: 'تعلم بالتجربة والخطأ (مثل AlphaGo)', category: 'أساسيات' },
+      { term: 'Overfitting', arabic: 'فرط التخصيص', explanation: 'النموذج يحفظ البيانات بدلاً من تعلم الأنماط', category: 'مشاكل' },
+      { term: 'Underfitting', arabic: 'ضعف التخصيص', explanation: 'النموذج بسيط جدًا ولا يتعلم الأنماط', category: 'مشاكل' },
+      { term: 'Bias', arabic: 'انحياز', explanation: 'خطأ في النموذج بسبب افتراضات خاطئة', category: 'مشاكل' },
+      { term: 'Variance', arabic: 'تباين', explanation: 'حساسية النموذج للتغيرات في بيانات التدريب', category: 'مشاكل' },
+      { term: 'Hallucination', arabic: 'هلوسة', explanation: 'عندما يولد LLM معلومات غير صحيحة بثقة', category: 'مشاكل' },
+      { term: 'GPU', arabic: 'معالج رسوميات', explanation: 'يسرع تدريب وتشغيل نماذج AI', category: 'أساسيات' },
+      { term: 'Tensor', arabic: 'موتر', explanation: 'مصفوفة متعددة الأبعاد (البيانات الأساسية في DL)', category: 'مفاهيم' },
+      { term: 'Epoch', arabic: 'دورة', explanation: 'مرة يمر فيها النموذج على كل بيانات التدريب', category: 'مفاهيم' },
+      { term: 'Loss Function', arabic: 'دالة الخسارة', explanation: 'تقيس أخطاء النموذج', category: 'مفاهيم' },
+      { term: 'Gradient Descent', arabic: 'نزول التدرج', explanation: 'تحسين النموذج بتقليل دالة الخسارة', category: 'مفاهيم' },
+      { term: 'CNN', arabic: 'شبكة التفافية', explanation: 'شبكة عصبية متخصصة في تحليل الصور', category: 'تخصصات' },
+      { term: 'Transfer Learning', arabic: 'تعلم نقل', explanation: 'استخدام نموذج مدرب مسبقًا في مهمة جديدة', category: 'تقنيات' },
+      { term: 'MLOps', arabic: 'عمليات التعلم الآلي', explanation: 'إدارة دورة حياة نماذج ML في الإنتاج', category: 'ممارسات' },
+      { term: 'RAG', arabic: 'توليد معزز بالاسترجاع', explanation: 'ربط LLM بقاعدة معرفة خارجية', category: 'تقنيات' },
+      { term: 'AI Ethics', arabic: 'أخلاقيات AI', explanation: 'ضمان أن AI عادل وآمن وشفاف', category: 'ممارسات' },
+    ],
+    tools: [
+      { name: 'TensorFlow', desc: 'إطار عمل للتعلم العميق من Google', use: 'بناء وتدريب الشبكات العصبية', pros: ['مدعوم من Google', 'مجتمع كبير', 'TPU support'], cons: ['API معقد', 'منحنى تعلم'], alt: 'PyTorch, JAX', demand: 'عالي جدًا' },
+      { name: 'PyTorch', desc: 'إطار عمل للتعلم العميق من Meta', use: 'البحث والتطوير في DL', pros: ['سهل التعلم', 'Dynamic Graphs', 'مدعوم من Meta'], cons: ['أقل نضجًا في الإنتاج'], alt: 'TensorFlow, JAX', demand: 'عالي جدًا' },
+      { name: 'Hugging Face', desc: 'مكتبة النماذج الجاهزة', use: 'NLP, CV, Audio - نماذج جاهزة', pros: ['آلاف النماذج', 'سهل', 'مجتمع كبير'], cons: ['يحتاج GPU'], alt: 'OpenAI API', demand: 'عالي جدًا' },
+      { name: 'OpenAI API', desc: 'API نماذج GPT للـ LLMs', use: 'ChatGPT API, Embeddings', pros: ['أفضل النماذج', 'سهل الاستخدام'], cons: ['مدفوع', 'تحكم محدود'], alt: 'Claude API, Gemini API', demand: 'عالي جدًا' },
+      { name: 'LangChain', desc: 'إطار لتطبيقات LLM', use: 'بناء أنظمة RAG و AI Agents', pros: ['متكامل', 'مرونة عالية', 'مجاني'], cons: ['يتغير بسرعة', 'توثيق محدود'], alt: 'LlamaIndex, Haystack', demand: 'متزايد جدًا' },
+      { name: 'OpenCV', desc: 'مكتبة الرؤية الحاسوبية', use: 'معالجة الصور والفيديو', pros: ['مكتبة ضخمة', 'سريع', 'متعدد المنصات'], cons: ['منحنى تعلم حاد'], alt: 'Pillow, Scikit-image', demand: 'عالي' },
+      { name: 'Scikit-learn', desc: 'خوارزميات ML التقليدية', use: 'التصنيف والانحدار والتجميع', pros: ['سهل', 'متكامل', 'ممتاز للتعلم'], cons: ['ليس للـ DL'], alt: 'XGBoost', demand: 'عالي جدًا' },
+      { name: 'MLflow', desc: 'إدارة تجارب ونماذج ML', use: 'MLOps - تتبع التجارب', pros: ['مجاني', 'سهل', 'متكامل'], cons: ['ميزات محدودة'], alt: 'Weights & Biases', demand: 'عالي' },
+      { name: 'Docker', desc: 'حاويات لتغليف التطبيقات', use: 'نشر نماذج AI في حاويات', pros: ['قوي', 'محمول', 'مجاني'], cons: ['منحنى تعلم'], alt: 'Podman, Kubernetes', demand: 'عالي جدًا' },
+    ],
+    interview: [
+      { type: 'hr', q: 'Why are you interested in AI?', a: 'AI is transforming every industry. I want to be part of building intelligent systems that solve real problems.' },
+      { type: 'hr', q: 'Tell me about an AI project you worked on.', a: 'I built an image classifier using CNN that achieves 92% accuracy on CIFAR-10. I used transfer learning with ResNet50.' },
+      { type: 'technical', q: 'What is the difference between ML, DL, and AI?', a: 'AI is the broad field. ML is a subset of AI where models learn from data. DL is a subset of ML using deep neural networks.', difficulty: 'easy' },
+      { type: 'technical', q: 'Explain the Transformer architecture.', a: 'Transformers use self-attention mechanism to process sequences in parallel. Key components: Multi-Head Attention, Positional Encoding, Feed-Forward Networks. BERT and GPT are based on Transformers.', difficulty: 'hard' },
+      { type: 'technical', q: 'What is the difference between CNN and RNN?', a: 'CNNs use convolutional layers for spatial data (images). RNNs use recurrent connections for sequential data (text, time series). Transformers now outperform both for many tasks.', difficulty: 'medium' },
+      { type: 'technical', q: 'Explain the Bias-Variance Tradeoff.', a: 'High Bias = Simple model that underfits. High Variance = Complex model that overfits. Goal is to find the sweet spot that minimizes total error.', difficulty: 'medium' },
+      { type: 'technical', q: 'What is Transfer Learning and when would you use it?', a: 'Transfer Learning uses a pre-trained model and fine-tunes it on a new task. Use when you have limited data or want faster training. E.g., using ResNet50 pre-trained on ImageNet for medical imaging.', difficulty: 'medium' },
+      { type: 'technical', q: 'What is RAG (Retrieval-Augmented Generation)?', a: 'RAG combines a retrieval system with an LLM. The retriever fetches relevant documents, and the LLM generates answers based on them. Gives more accurate, up-to-date responses than LLM alone.', difficulty: 'hard' },
+      { type: 'technical', q: 'How do you handle imbalanced datasets?', a: '1. Resampling (oversample minority, undersample majority)\n2. Class weights\n3. Synthetic data (SMOTE)\n4. Different evaluation metrics (F1-score, AUC-ROC)\n5. Anomaly detection algorithms', difficulty: 'medium' },
+      { type: 'scenario', q: 'Your image classification model has 95% accuracy on training but 70% on test. What happened?', a: 'Classic overfitting. Solutions:\n1. Add regularization (Dropout, L2)\n2. Get more training data\n3. Data augmentation\n4. Simplify the model\n5. Early stopping\n6. Cross-validation', difficulty: 'hard' },
+      { type: 'scenario', q: 'The CEO wants a chatbot that answers customer questions using company documents. How would you build it?', a: 'I would use RAG architecture: 1. Chunk all documents into a vector database (Pinecone/Chroma)\n2. Use an embedding model to index them\n3. When a question comes, retrieve relevant chunks\n4. Feed the chunks as context to an LLM (GPT-4/Claude) to generate the answer\n5. Add citations for trust', difficulty: 'hard' },
+    ],
+    career: [
+      { level: 'Junior', exp: '0-2 years', title: 'Junior ML Engineer', salary: '10k - 18k ج.م', skills: ['Python', 'ML Basics (Scikit-learn)', 'SQL', 'Data Analysis'], certs: ['TensorFlow Certificate'] },
+      { level: 'Mid-Level', exp: '2-5 years', title: 'AI Engineer', salary: '18k - 35k ج.م', skills: ['Deep Learning (PyTorch/TF)', 'Computer Vision or NLP', 'Model Deployment', 'Cloud AI Services'], certs: ['AWS ML Specialty', 'GCP ML Engineer'] },
+      { level: 'Senior', exp: '5-8 years', title: 'Senior AI Engineer', salary: '30k - 50k ج.م', skills: ['LLMs & Generative AI', 'MLOps', 'System Design', 'Team Mentoring'], certs: ['TensorFlow Developer'] },
+      { level: 'Lead', exp: '8+ years', title: 'AI Architect / Lead', salary: '45k - 70k+ ج.م', skills: ['AI Strategy', 'Architecture Design', 'Cross-team Leadership', 'AI Ethics'], certs: ['CISSP', 'MBA'] },
+      { level: 'Executive', exp: '10+ years', title: 'Chief AI Officer / VP AI', salary: '70k - 120k+ ج.م', skills: ['Executive Leadership', 'AI Vision & Strategy', 'Budget Management', 'Industry Influence'], certs: ['PhD preferred'] },
+    ],
+    revision: {
+      keyConcepts: ['AI > ML > DL (Hierarchy)', 'Supervised vs Unsupervised vs Reinforcement Learning', 'CNN for Images, RNN/Transformer for Text', 'LLMs: GPT, BERT, LLaMA', 'RAG: Retrieval + Generation'],
+      importantTerms: ['Overfitting vs Underfitting', 'Bias vs Variance', 'Gradient Descent', 'Transfer Learning', 'Fine-tuning vs Pre-training', 'Hallucination'],
+      mustTools: ['Python (NumPy, Pandas)', 'TensorFlow / PyTorch', 'Scikit-learn', 'Hugging Face', 'OpenAI API', 'LangChain'],
+      interviewNuggets: ['اعرف الفرق بين ML/DL/AI', 'جهز مشروع عملية (CV أو NLP)', 'اعرف Transformer Architecture', 'افهم RAG و LLMs', 'اتعلم Prompt Engineering'],
+      mlFundamentals: ['Supervised: Regression + Classification', 'Unsupervised: Clustering + Dimensionality Reduction', 'Reinforcement: Agent + Environment + Reward', 'Evaluation: Accuracy, Precision, Recall, F1, AUC-ROC'],
+      deepLearning: ['Neural Network: Input → Hidden → Output', 'Backpropagation: تقليل الخطأ بالعكس', 'CNN: Conv + Pooling + FC (للصور)', 'Transformer: Self-Attention (للنصوص)', 'GPU يسرع التدريب 10-50x'],
+      nlp: ['Text Preprocessing: Tokenization, Stop Words, Stemming', 'Word Embeddings: Word2Vec, BERT', 'Transformer: أساس كل NLP حديث', 'LLM: نموذج لغة كبير مدرب على نصوص ضخمة'],
+      computerVision: ['CNN: Conv layers تكتشف الملامح', 'Object Detection: YOLO (You Only Look Once)', 'Image Segmentation: تقسيم الصورة لأجزاء', 'GANs: توليد صور جديدة'],
+      genAI: ['LLMs: GPT-4, Claude, LLaMA', 'RAG: استرجاع + توليد = دقة أعلى', 'AI Agents: أدوات مستقلة تخطط وتنفذ', 'Prompt Engineering: مفتاح نجاح LLMs', 'الكود: GitHub Copilot يكتب 40% من الكود'],
+    },
+  },
   'digital-arts': {
+    official: {
+      targetAudience: 'BIS, Mass Communication, Fine Arts, Applied Arts, Specific Education',
+      softSkills: 'Freelance',
+      levels: [
+        { year: 1, title: 'Graphic Design', titleAr: 'التصميم الجرافيكي' },
+        { year: 2, title: 'Digital Marketing / 2D Motion Graphics', titleAr: 'التسويق الرقمي / الموشن جرافيك' },
+        { year: 3, title: 'Digital Marketing', titleAr: 'التسويق الرقمي' }
+      ]
+    },
     intro: {
       title: 'Digital Arts Track',
       subtitle: 'الفنون الرقمية',
@@ -1219,6 +1492,11 @@ window.trackContent = {
     },
   },
   'digital-marketing': {
+    official: {
+      targetAudience: 'BIS, Mass Communication, Fine Arts, Applied Arts',
+      softSkills: 'Freelance',
+      note: '(إضافة) هذا المسار ليس من المسارات الرسمية للبرنامج - This track is an addition, not part of the official program',
+    },
     intro: {
       title: 'Digital Marketing Track',
       subtitle: 'التسويق الرقمي',
