@@ -576,7 +576,8 @@ function renderGlossary(glossary){
   var el = document.getElementById('tab-glossary');
   var cats = [];
   glossary.forEach(function(g){ if(cats.indexOf(g.category)<0) cats.push(g.category); });
-  el.innerHTML = '<div class="gloss-controls"><input class="gloss-search" id="glossSearch" placeholder="🔍 ابحث عن مصطلح..." oninput="filterGlossary()"><div class="cat-filters"><button class="cat-btn active" onclick="filterGlossaryCat(this,\'all\')">الكل</button>'+
+  el.innerHTML = '<div style="background:rgba(108,92,231,0.05);border:1px solid rgba(108,92,231,0.1);border-radius:var(--radius-sm);padding:8px 14px;margin-bottom:14px;font-size:0.8rem;color:var(--text-muted)">📚 هذا المحتوى تعليمي إضافي وغير مدرج في برنامج NTI الرسمي — Addition educational content</div>' +
+    '<div class="gloss-controls"><input class="gloss-search" id="glossSearch" placeholder="🔍 ابحث عن مصطلح..." oninput="filterGlossary()"><div class="cat-filters"><button class="cat-btn active" onclick="filterGlossaryCat(this,\'all\')">الكل</button>'+
     cats.map(function(c){ return '<button class="cat-btn" onclick="filterGlossaryCat(this,\''+c+'\')">'+c+'</button>'; }).join('') +
     '</div></div><div class="gloss-list" id="glossList">' +
     glossary.sort(function(a,b){ return a.term.localeCompare(b.term); }).map(function(g){
@@ -607,7 +608,7 @@ function filterGlossaryCat(btn, cat){
 
 function renderTools(tools){
   var el = document.getElementById('tab-tools');
-  el.innerHTML = '<div class="tools-grid">' +
+  el.innerHTML = '<div style="background:rgba(108,92,231,0.05);border:1px solid rgba(108,92,231,0.1);border-radius:var(--radius-sm);padding:8px 14px;margin-bottom:14px;font-size:0.8rem;color:var(--text-muted)">🛠️ هذا المحتوى تعليمي إضافي وغير مدرج في برنامج NTI الرسمي — Addition educational content</div><div class="tools-grid">' +
     tools.map(function(t){
       return '<div class="tool-card"><div class="tool-header" onclick="this.parentElement.classList.toggle(\'open\')"><span><span class="tool-name">'+t.name+'</span><div class="tool-desc">'+t.desc+'</div></span><span class="demand-badge" data-demand="'+t.demand+'">طلب '+t.demand+'</span></div><div class="tool-body"><div class="trow"><strong>متى تستخدم:</strong><span>'+t.use+'</span></div><div class="trow"><strong>المميزات:</strong></div><ul>'+(t.pros||[]).map(function(p){ return '<li>✅ '+p+'</li>'; }).join('')+'</ul><div class="trow"><strong>القيود:</strong></div><ul>'+(t.cons||[]).map(function(c){ return '<li>❌ '+c+'</li>'; }).join('')+'</ul><div class="alt"><strong>البديل:</strong> '+t.alt+'</div></div></div>';
     }).join('') +
@@ -623,7 +624,7 @@ function renderInterview(questions){
   var types = [];
   questions.forEach(function(q){ if(types.indexOf(q.type)<0) types.push(q.type); });
   var typeLabels = {hr:'الموارد البشرية',technical:'تقنية',scenario:'سيناريوهات'};
-  el.innerHTML = '<div class="interview-controls"><button class="btn btn-outline btn-sm" onclick="randomQuestion()">🎲 سؤال عشوائي</button><span style="color:var(--text-muted);font-size:0.85rem">|</span>' +
+  el.innerHTML = '<div style="background:rgba(108,92,231,0.05);border:1px solid rgba(108,92,231,0.1);border-radius:var(--radius-sm);padding:8px 14px;margin-bottom:14px;font-size:0.8rem;color:var(--text-muted)">🎤 هذا المحتوى تعليمي إضافي وغير مدرج في برنامج NTI الرسمي — Addition educational content</div><div class="interview-controls"><button class="btn btn-outline btn-sm" onclick="randomQuestion()">🎲 سؤال عشوائي</button><span style="color:var(--text-muted);font-size:0.85rem">|</span>' +
     types.map(function(t){ return '<button class="btn btn-sm cat-btn'+(t==='hr'?' active':'')+'" onclick="filterInterview(this,\''+t+'\')">'+(typeLabels[t]||t)+'</button>'; }).join('') +
     '</div><div id="interviewList" class="interview-list"></div>';
   interviewType = 'hr';
@@ -669,7 +670,7 @@ function randomQuestion(){
 
 function renderCareer(career){
   var el = document.getElementById('tab-career');
-  el.innerHTML = '<div class="career-timeline">' +
+  el.innerHTML = '<div style="background:rgba(108,92,231,0.05);border:1px solid rgba(108,92,231,0.1);border-radius:var(--radius-sm);padding:8px 14px;margin-bottom:14px;font-size:0.8rem;color:var(--text-muted)">💼 هذا المحتوى تعليمي إضافي وغير مدرج في برنامج NTI الرسمي — Addition educational content</div><div class="career-timeline">' +
     career.map(function(c){
       return '<div class="career-item"><span class="level-badge">'+c.level+'</span><h4>'+c.title+'</h4><div class="exp">📅 خبرة: '+c.exp+'</div><div class="salary">💰 '+c.salary+'</div><div><strong style="font-size:0.85rem;color:var(--text-muted)">المهارات:</strong><div class="skill-wrap">'+c.skills.map(function(s){ return '<span>'+s+'</span>'; }).join('')+'</div></div><div><strong style="font-size:0.85rem;color:var(--text-muted)">الشهادات:</strong><div class="cert-wrap">'+c.certs.map(function(s){ return '<span>'+s+'</span>'; }).join('')+'</div></div></div>';
     }).join('') +
@@ -678,7 +679,7 @@ function renderCareer(career){
 
 function renderRevision(rev){
   var el = document.getElementById('tab-revision');
-  el.innerHTML = '<div class="rev-grid"><div class="rev-card"><h4>🧠 المفاهيم الأساسية</h4><ul>'+(rev.keyConcepts||[]).map(function(c){ return '<li>'+c+'</li>'; }).join('')+'</ul></div><div class="rev-card"><h4>📝 المصطلحات المهمة</h4><ul>'+(rev.importantTerms||[]).map(function(t){ return '<li>'+t+'</li>'; }).join('')+'</ul></div><div class="rev-card"><h4>🔧 أدوات لا غنى عنها</h4><ul>'+(rev.mustTools||[]).map(function(t){ return '<li>'+t+'</li>'; }).join('')+'</ul></div><div class="rev-card"><h4>💡 نقاط للمقابلات</h4><ul>'+(rev.interviewNuggets||[]).map(function(n){ return '<li>'+n+'</li>'; }).join('')+'</ul></div></div><h3 class="section-title">🃏 بطاقات المراجعة</h3><div class="flash-wrap">' +
+  el.innerHTML = '<div style="background:rgba(108,92,231,0.05);border:1px solid rgba(108,92,231,0.1);border-radius:var(--radius-sm);padding:8px 14px;margin-bottom:14px;font-size:0.8rem;color:var(--text-muted)">📝 هذا المحتوى تعليمي إضافي وغير مدرج في برنامج NTI الرسمي — Addition educational content</div><div class="rev-grid"><div class="rev-card"><h4>🧠 المفاهيم الأساسية</h4><ul>'+(rev.keyConcepts||[]).map(function(c){ return '<li>'+c+'</li>'; }).join('')+'</ul></div><div class="rev-card"><h4>📝 المصطلحات المهمة</h4><ul>'+(rev.importantTerms||[]).map(function(t){ return '<li>'+t+'</li>'; }).join('')+'</ul></div><div class="rev-card"><h4>🔧 أدوات لا غنى عنها</h4><ul>'+(rev.mustTools||[]).map(function(t){ return '<li>'+t+'</li>'; }).join('')+'</ul></div><div class="rev-card"><h4>💡 نقاط للمقابلات</h4><ul>'+(rev.interviewNuggets||[]).map(function(n){ return '<li>'+n+'</li>'; }).join('')+'</ul></div></div><h3 class="section-title">🃏 بطاقات المراجعة</h3><div class="flash-wrap">' +
     (rev.keyConcepts||[]).concat(rev.importantTerms||[]).slice(0,8).map(function(item){
       return '<div class="flash-card" onclick="this.classList.toggle(\'flipped\')"><div class="flash-inner"><div class="flash-front">'+item+'</div><div class="flash-back">اضغط للكشف ←</div></div></div>';
     }).join('') +
