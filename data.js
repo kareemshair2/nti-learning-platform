@@ -8,7 +8,7 @@
   hours: 120,
   techHours: 90,
   softHours: 30,
-  delivery: ['هجين (Hybrid): تعلم عن بُعد تفاعلي + حضور شخصي', 'عن بُعد (Interactive Online)', 'حضوري (Physical On-Site)'],
+  delivery: ['هجين (Hybrid): تعلم عن بُعد تفاعلي + حضور شخصي', 'عن بُعد (Interactive Online)', 'حضوري (Physical On-Site) في مقرات NTI', 'مراكز CREATIVA للإبداع الرقمي'],
   coverage: 'جميع محافظات مصر',
   cost: 'مجاني بالكامل - Free Scholarship',
   source: 'https://www.nti.sci.eg/summertraining/',
@@ -35,7 +35,7 @@
   benefits: [
     'شهادات معتمدة من ITIDA/NTI بناءً على الحضور - Certificates based on attendance stating completion of summer training',
     'مساعدة الطلاب في الحصول على الساعات المعتمدة المطلوبة من كلياتهم - Help students obtain credit hours required by faculties',
-    'تتحمل ITIDA تكلفة الامتحانات الدولية بعد الاجتياز - ITIDA pays cost of international exams after passing'
+    'خصم 70% على تكلفة الامتحانات الدولية بعد الاجتياز (وليست مجانية بالكامل) - ITIDA subsidizes 70% of international exam costs (not fully free)'
   ],
   registration: {
     link: 'https://www.nti.sci.eg/summertraining/',
@@ -45,7 +45,12 @@
   agenda: 'فترة الإجازة الصيفية: يونيو، يوليو، أغسطس، سبتمبر - Summer vacation: June, July, August, September',
   collaborationAr: 'تتعاون ITIDA مع شركات الاتصالات والتكنولوجيا في إطار المسؤولية المجتمعية للشركات (CSR)، وأيضًا مع المعهد القومي للاتصالات (NTI) لخبرته التدريبية الواسعة وشراكاته مع شركات التكنولوجيا العالمية.',
   collaborationEn: 'ITIDA collaborates with telecom and technology companies through CSR initiatives, and with NTI for its wide technical training experience and diverse partnerships with global tech companies.',
-  annualTarget: '1,500 طالب جامعي سنوياً',
+  annualTarget: '10,000 طالب جامعي سنوياً',
+  stats: {
+    target: '10,000 طالب سنوياً',
+    trained2025: '6,125+ متدرب (2025)',
+    femalePercentage: '40% إناث'
+  },
   hybridModel: {
     ar: 'نموذج التدريب الهجين (Hybrid Training Model) يجمع بين التعلم عن بُعد التفاعلي (Interactive Distance Education) والحضور الشخصي (Physical Learning) في فروع NTI المنتشرة بجميع محافظات مصر.',
     en: 'The Hybrid Training Model combines Interactive Distance Education (Online) with Physical Learning (On-Site) at NTI branches across all Egyptian governorates.'
@@ -58,7 +63,15 @@
     { person: 'Amr Mahfouz', role: 'CEO of ITIDA', quoteAr: 'نحرص على توفير التدريب التقني للطلاب لسد الفجوة بين الجامعات وسوق العمل.', quoteEn: 'We are keen on providing technical training to students to bridge the gap between universities and the labor market.' },
     { person: 'Prof. Iman Ashour', role: 'Director of NTI', quoteAr: 'المعهد القومي للاتصالات يقدم خبرته التدريبية الواسعة وشراكاته مع شركات التكنولوجيا العالمية.', quoteEn: 'NTI provides its extensive training expertise and partnerships with global technology companies.' }
   ],
-  techPartners: ['Huawei', 'Amazon', 'Cisco', 'VMware'],
+  techPartners: ['Huawei', 'Amazon', 'Cisco', 'VMware', 'NVIDIA', 'Red Hat'],
+  certificates: [
+    { name: 'NVIDIA DLI', desc: 'NVIDIA Deep Learning Institute digital badges - شارات رقمية من NVIDIA في التعلم العميق' },
+    { name: 'Huawei HCCDA', desc: 'Huawei HCCDA-Tech Essentials - أساسيات تقنيات هواوي' },
+    { name: 'Cisco CCNA', desc: 'Cisco Certified Network Associate - أساسيات الشبكات من سيسكو' },
+    { name: 'Cisco Cyber Ops', desc: 'Cisco Cyber Ops Associate - أمن الشبكات وعمليات الأمن السيبراني' },
+    { name: 'AWS', desc: 'Amazon Web Services Certifications - شهادات الحوسبة السحابية من أمازون' },
+    { name: 'Red Hat', desc: 'Red Hat Certified System Administrator (RHCSA) - إدارة أنظمة لينكس من ريد هات' }
+  ],
   softSkillsDetail: {
     general: [
       'التواصل والعرض التقديمي (Communication & Presentation)',
@@ -87,6 +100,8 @@
       name: 'ITIDA-Systel Training Program',
       descriptionAr: 'برنامج مشترك بين ITIDA وشركة Systel لتخصصات هندسة الاتصالات والحاسبات وعلوم الحاسب',
       descriptionEn: 'Joint program between ITIDA and Systel for communications engineering, computer engineering and computer science',
+      audience: 'Computer Science and Engineering only',
+      location: 'Smart Village',
       technicalHours: 90,
       softSkillsHours: 30,
       softSkillsContentAr: 'المهارات العامة: التواصل، المقابلات الشخصية، العرض والتقديم. مهارات القيادة: العمل الجماعي، اتخاذ القرارات وحل المشكلات، إدارة الوقت. مهارات العمل الحر: مقدمة في أمن المعلومات والخصوصية.',
@@ -115,9 +130,9 @@ window.trackContent = {
       targetAudience: 'Engineering & CS',
       softSkills: 'Soft Skills',
       levels: [
-        { year: 1, title: 'Network Infrastructure', titleAr: 'البنية التحتية للشبكات' },
-        { year: 2, title: 'Network Security', titleAr: 'أمن الشبكات' },
-        { year: 3, title: 'Fortinet Cybersecurity', titleAr: 'الأمن السيبراني من Fortinet' }
+        { year: 1, title: 'Network Infrastructure', titleAr: 'البنية التحتية للشبكات', moduleRef: 'net-infra' },
+        { year: 2, title: 'Network Security', titleAr: 'أمن الشبكات', moduleRef: 'net-sec' },
+        { year: 3, title: 'Fortinet Cybersecurity', titleAr: 'الأمن السيبراني من Fortinet', moduleRef: null }
       ]
     },
     intro: {
@@ -361,9 +376,9 @@ window.trackContent = {
       targetAudience: 'Engineering & CS, BIS',
       softSkills: 'Freelance',
       levels: [
-        { year: 1, title: 'UI & UX Design', titleAr: 'تصميم واجهات المستخدم' },
-        { year: 2, title: 'Web Design', titleAr: 'تصميم الويب' },
-        { year: 3, title: 'Full Stack Web Development', titleAr: 'تطوير الويب المتكامل' }
+        { year: 1, title: 'UI & UX Design', titleAr: 'تصميم واجهات المستخدم', moduleRef: 'ui-ux' },
+        { year: 2, title: 'Web Design', titleAr: 'تصميم الويب', moduleRef: 'web-fund' },
+        { year: 3, title: 'Full Stack Web Development', titleAr: 'تطوير الويب المتكامل (MEAN Stack)', moduleRef: null }
       ]
     },
     intro: {
@@ -594,9 +609,9 @@ window.trackContent = {
       targetAudience: 'Engineering & CS, BIS',
       softSkills: 'Freelance / Soft Skills',
       levels: [
-        { year: 1, title: 'Data Analytics / Programming using Python', titleAr: 'تحليل البيانات / البرمجة باستخدام Python' },
-        { year: 2, title: 'Advanced Data Analytics / Big Data Analysis', titleAr: 'تحليل بيانات متقدم / تحليل البيانات الضخمة' },
-        { year: 3, title: 'Internet of Things (IoT) Applications', titleAr: 'تطبيقات إنترنت الأشياء' }
+        { year: 1, title: 'Data Analytics / Programming using Python', titleAr: 'تحليل البيانات / البرمجة باستخدام Python', moduleRef: 'python-ds' },
+        { year: 2, title: 'Advanced Data Analytics / Big Data Analysis', titleAr: 'تحليل بيانات متقدم / تحليل البيانات الضخمة', moduleRef: 'data-eng' },
+        { year: 3, title: 'Internet of Things (IoT) Applications', titleAr: 'تطبيقات إنترنت الأشياء', moduleRef: 'iot-ds' }
       ]
     },
     intro: {
@@ -768,9 +783,9 @@ window.trackContent = {
       targetAudience: 'Engineering & CS',
       softSkills: 'Soft Skills',
       levels: [
-        { year: 1, title: 'Cloud Essentials', titleAr: 'أساسيات السحابة' },
-        { year: 2, title: 'Cloud Architect', titleAr: 'معمارية السحابة' },
-        { year: 3, title: 'Building Datacenters', titleAr: 'بناء مراكز البيانات' }
+        { year: 1, title: 'Cloud Essentials', titleAr: 'أساسيات السحابة', moduleRef: 'cloud-fund' },
+        { year: 2, title: 'Cloud Architect', titleAr: 'معمارية السحابة', moduleRef: 'cloud-arch' },
+        { year: 3, title: 'Building Datacenters', titleAr: 'بناء مراكز البيانات', moduleRef: 'dc-virt' }
       ]
     },
     intro: {
@@ -923,8 +938,8 @@ window.trackContent = {
       targetAudience: 'Engineering & CS',
       softSkills: 'Soft Skills',
       levels: [
-        { year: 1, title: 'Linux Red Hat Administration', titleAr: 'إدارة لينكس Red Hat' },
-        { year: 2, title: 'Windows Server Administration', titleAr: 'إدارة ويندوز سيرفر' }
+        { year: 1, title: 'Linux Red Hat Administration', titleAr: 'إدارة لينكس Red Hat', moduleRef: 'linux-admin' },
+        { year: 2, title: 'Windows Server Administration', titleAr: 'إدارة ويندوز سيرفر', moduleRef: 'windows-server' }
       ]
     },
     intro: {
@@ -1089,8 +1104,8 @@ window.trackContent = {
       targetAudience: 'Engineering & CS',
       softSkills: 'Freelance',
       levels: [
-        { year: 1, title: 'Microcontroller-Based Systems', titleAr: 'أنظمة الميكروكنترولر' },
-        { year: 2, title: 'Digital Design using FPGA', titleAr: 'التصميم الرقمي باستخدام FPGA' }
+        { year: 1, title: 'Microcontroller-Based Systems', titleAr: 'أنظمة الميكروكنترولر', moduleRef: 'microcontrollers' },
+        { year: 2, title: 'Digital Design using FPGA', titleAr: 'التصميم الرقمي باستخدام FPGA', moduleRef: null }
       ]
     },
     intro: {
@@ -1248,9 +1263,9 @@ window.trackContent = {
       targetAudience: 'Engineering & CS, BIS',
       softSkills: 'Freelance',
       levels: [
-        { year: 1, title: 'Machine Learning', titleAr: 'تعلم الآلة' },
-        { year: 2, title: 'AI For Business / Computer Vision', titleAr: 'AI للأعمال / رؤية حاسوبية' },
-        { year: 3, title: 'Natural Language Processing (NLP)', titleAr: 'معالجة اللغة الطبيعية' }
+        { year: 1, title: 'Machine Learning', titleAr: 'تعلم الآلة', moduleRef: 'ml-fund' },
+        { year: 2, title: 'AI For Business / Computer Vision', titleAr: 'AI للأعمال / رؤية حاسوبية', moduleRef: null },
+        { year: 3, title: 'Natural Language Processing (NLP)', titleAr: 'معالجة اللغة الطبيعية', moduleRef: 'nlp-ai' }
       ]
     },
     intro: {
@@ -1392,8 +1407,8 @@ window.trackContent = {
       targetAudience: 'Mass Communication, Fine Arts, Applied Arts, Specific Education',
       softSkills: 'Freelance',
       levels: [
-        { year: 1, title: 'Graphic Design', titleAr: 'التصميم الجرافيكي' },
-        { year: 2, title: '2D Animation', titleAr: 'الرسوم المتحركة ثنائية الأبعاد' }
+        { year: 1, title: 'Graphic Design', titleAr: 'التصميم الجرافيكي', moduleRef: 'graphic-design' },
+        { year: 2, title: '2D Animation', titleAr: 'الرسوم المتحركة ثنائية الأبعاد', moduleRef: null }
       ]
     },
     intro: {

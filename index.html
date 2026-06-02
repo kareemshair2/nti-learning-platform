@@ -159,6 +159,8 @@ header h2 span{color:var(--primary-light)}
 .accordion-header:hover{background:rgba(108,92,231,0.03)}
 .accordion-header .title{font-weight:600;font-size:0.95rem;color:var(--text)}
 .accordion-header .meta{display:flex;gap:12px;align-items:center;font-size:0.76rem;color:var(--text-muted);margin-top:4px;flex-wrap:wrap}
+.accordion.official{border-right:3px solid var(--primary);background:rgba(108,92,231,0.02)}
+.accordion.addition{border-right:3px solid var(--text-muted);opacity:0.85}
 .accordion-header .icon{font-size:1rem;color:var(--text-muted);transition:transform 0.35s ease,color 0.3s ease;flex-shrink:0}
 .accordion.open .accordion-header .icon{transform:rotate(180deg);color:var(--primary-light)}
 .accordion.open .accordion-header{background:rgba(108,92,231,0.03)}
@@ -446,9 +448,11 @@ function renderHome(){
       '<div class="prog-section">' +
         '<h5>📝 التسجيل (Registration)</h5><p>رابط التسجيل: <a href="' + pi.registration.link + '" target="_blank" rel="noopener">' + pi.registration.link + '</a></p><p style="color:var(--text-sec);font-size:0.85rem">ملاحظة: ' + pi.registration.noteAr + '</p>' +
       '</div>' +
+      (pi.stats ? '<div class="prog-section"><h5>📊 إحصائيات البرنامج</h5><div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:8px"><div class="prog-card" style="text-align:center"><div style="font-size:1.4rem;font-weight:700;color:var(--primary-light)">' + (pi.stats.target||'') + '</div><div style="font-size:0.8rem;color:var(--text-muted)">المستهدف سنوياً</div></div><div class="prog-card" style="text-align:center"><div style="font-size:1.4rem;font-weight:700;color:var(--secondary)">' + (pi.stats.trained2025||'') + '</div><div style="font-size:0.8rem;color:var(--text-muted)">تم تدريبهم (2025)</div></div><div class="prog-card" style="text-align:center"><div style="font-size:1.4rem;font-weight:700;color:var(--primary-light)">' + (pi.stats.femalePercentage||'') + '</div><div style="font-size:0.8rem;color:var(--text-muted)">نسبة الإناث</div></div></div></div>' : '') +
       '<div class="prog-section">' +
         '<h5>🎯 الاستهداف السنوي</h5><p style="color:var(--text-sec);font-size:0.85rem;line-height:1.7">' + (pi.annualTarget||'') + '</p>' +
       '</div>' +
+      (pi.certificates ? '<div class="prog-section"><h5>🏅 الشهادات الدولية المتاحة (خصم 70%)</h5><div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:10px;margin-top:8px">' + pi.certificates.map(function(c){ return '<div class="prog-card"><strong style="color:var(--primary-light);font-size:0.9rem">' + c.name + '</strong><p style="font-size:0.8rem;color:var(--text-sec);margin-top:4px">' + c.desc + '</p></div>'; }).join('') + '</div></div>' : '') +
       '<div class="prog-section">' +
         '<h5>🤝 التعاون والشراكات</h5><p style="color:var(--text-sec);font-size:0.85rem;line-height:1.7">' + pi.collaborationAr + '</p>' +
         (pi.techPartners ? '<p style="margin-top:8px"><strong style="font-size:0.85rem;color:var(--text-muted)">الشركاء التكنولوجيون:</strong> <span class="tag">' + pi.techPartners.join('</span><span class="tag">') + '</span></p>' : '') +
@@ -459,7 +463,7 @@ function renderHome(){
       (pi.strategicContext ? '<div class="prog-section"><h5>🇪🇬 السياق الاستراتيجي الوطني</h5><p style="color:var(--text-sec);font-size:0.85rem;line-height:1.7">' + pi.strategicContext.ar + '</p></div>' : '') +
       (pi.softSkillsDetail ? '<div class="prog-section"><h5>🧠 المهارات الشخصية (30 ساعة)</h5><div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:8px"><div><strong style="font-size:0.85rem;color:var(--text-muted)">المهارات العامة:</strong><ul>' + pi.softSkillsDetail.general.map(function(s){ return '<li style="font-size:0.85rem;color:var(--text-sec)">'+s+'</li>'; }).join('') + '</ul></div><div><strong style="font-size:0.85rem;color:var(--text-muted)">العمل الحر (Freelancing):</strong><ul>' + pi.softSkillsDetail.freelancing.map(function(s){ return '<li style="font-size:0.85rem;color:var(--text-sec)">'+s+'</li>'; }).join('') + '</ul></div></div></div>' : '') +
       (pi.officialStatements ? '<div class="prog-section"><h5>💬 تصريحات المسؤولين</h5>' + pi.officialStatements.map(function(s){ return '<div style="padding:10px 14px;background:var(--card);border-radius:var(--radius-sm);margin-bottom:8px;border-right:3px solid var(--primary)"><strong style="color:var(--text)">'+s.person+'</strong> <span style="color:var(--text-muted);font-size:0.8rem">— '+s.role+'</span><p style="color:var(--text-sec);font-size:0.85rem;margin-top:4px">'+s.quoteAr+'</p></div>'; }).join('') + '</div>' : '') +
-      (pi.programs && pi.programs.itidaSystel ? '<div class="prog-section"><h5>📋 ' + pi.programs.itidaSystel.name + '</h5><p style="color:var(--text-sec);font-size:0.85rem;line-height:1.7">' + pi.programs.itidaSystel.descriptionAr + '</p><div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:8px"><div class="prog-card"><h6>🛠️ المحتوى التقني (' + pi.programs.itidaSystel.technicalHours + ' ساعة)</h6><p style="font-size:0.85rem;color:var(--text-sec);line-height:1.7">' + pi.programs.itidaSystel.technicalContentAr + '</p></div><div class="prog-card"><h6>🧠 المهارات (' + pi.programs.itidaSystel.softSkillsHours + ' ساعة)</h6><p style="font-size:0.85rem;color:var(--text-sec);line-height:1.7">' + pi.programs.itidaSystel.softSkillsContentAr + '</p></div></div></div>' : '') +
+      (pi.programs && pi.programs.itidaSystel ? '<div class="prog-section"><h5>📋 ' + pi.programs.itidaSystel.name + '</h5><p style="color:var(--text-sec);font-size:0.85rem;line-height:1.7">' + pi.programs.itidaSystel.descriptionAr + '</p><div style="display:flex;gap:16px;flex-wrap:wrap;margin:8px 0"><span class="tag">🎓 ' + (pi.programs.itidaSystel.audience||'') + '</span><span class="tag">📍 ' + (pi.programs.itidaSystel.location||'') + '</span></div><div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:8px"><div class="prog-card"><h6>🛠️ المحتوى التقني (' + pi.programs.itidaSystel.technicalHours + ' ساعة)</h6><p style="font-size:0.85rem;color:var(--text-sec);line-height:1.7">' + pi.programs.itidaSystel.technicalContentAr + '</p></div><div class="prog-card"><h6>🧠 المهارات (' + pi.programs.itidaSystel.softSkillsHours + ' ساعة)</h6><p style="font-size:0.85rem;color:var(--text-sec);line-height:1.7">' + pi.programs.itidaSystel.softSkillsContentAr + '</p></div></div></div>' : '') +
       '<div class="prog-section"><h5>📌 برامج NTI الإضافية (إضافة — Additional NTI Programs)</h5><p style="color:var(--text-sec);font-size:0.85rem;line-height:1.7">يقدم المعهد القومي للاتصالات (NTI) برامج تدريبية متخصصة إضافية تشمل <strong>البنية التحتية للشبكات (Network Infrastructure)</strong>، <strong>الافتراضية لمراكز البيانات (Data Center Virtualization)</strong>، و <strong>Fiber To The Home (FTTH)</strong>. لمزيد من التفاصيل، تفضل بزيارة الموقع الرسمي للمعهد.</p></div>' +
       '<div class="prog-source">المصدر الرسمي: <a href="' + pi.source + '" target="_blank" rel="noopener">nti.sci.eg/summertraining</a> | <a href="' + pi.sourceItida + '" target="_blank" rel="noopener">itida.gov.eg</a></div>' +
     '</div>' +
@@ -492,7 +496,7 @@ function renderTrackView(id){
     '<div class="tab-content" id="tab-revision"></div>' +
     '</div>';
   renderIntro(content.intro, content.official);
-  renderModules(content.modules);
+  renderModules(content.modules, content.official);
   renderGlossary(content.glossary);
   renderTools(content.tools);
   renderInterview(content.interview);
@@ -535,11 +539,32 @@ function renderIntro(i, official){
     '</div>';
 }
 
-function renderModules(modules){
+function renderModules(modules, official){
   var el = document.getElementById('tab-modules');
-  el.innerHTML = modules.map(function(m, idx){
-    return '<div class="accordion"><div class="accordion-header" onclick="toggleAccordion(this)"><div><div class="title">'+m.title+'</div><div class="meta"><span>🕒 '+m.time+'</span><span>📊 '+m.level+'</span><span>🏅 '+m.cert+'</span></div></div><span class="icon">▼</span></div><div class="accordion-content"><div class="detail-grid"><div class="detail-card"><h6>📜 نظرة عامة (عربي)</h6><p>'+m.overviewAr+'</p></div><div class="detail-card"><h6>📜 Overview (English)</h6><p>'+m.overviewEn+'</p></div><div class="detail-card"><h6>❓ لماذا هذا مهم؟</h6><p>'+m.why+'</p></div><div class="detail-card"><h6>🧠 المفاهيم الرئيسية</h6><ul>'+(m.concepts||[]).map(function(c){ return '<li class="concept-tag">'+c+'</li>'; }).join('')+'</ul></div><div class="detail-card"><h6>🛠️ الأدوات المستخدمة</h6><ul>'+(m.tools||[]).map(function(t){ return '<li class="tool-tag">'+t+'</li>'; }).join('')+'</ul></div><div class="detail-card"><h6>📋 التطبيقات</h6><ul>'+(m.applications||[]).map(function(a){ return '<li>'+a+'</li>'; }).join('')+'</ul></div><div class="detail-card"><h6>⚠️ الأخطاء الشائعة</h6><ul>'+(m.mistakes||[]).map(function(k){ return '<li>'+k+'</li>'; }).join('')+'</ul></div></div><div class="summary-box"><strong>📝 ملخص:</strong> '+m.summary+'</div></div></div>';
-  }).join('');
+  var officialRefs = [];
+  if(official && official.levels){
+    official.levels.forEach(function(l){ if(l.moduleRef) officialRefs.push(l.moduleRef); });
+  }
+  var officialMods = modules.filter(function(m){ return officialRefs.indexOf(m.id) >= 0; });
+  var extraMods = modules.filter(function(m){ return officialRefs.indexOf(m.id) < 0; });
+  var modHtml = '';
+  if(officialMods.length){
+    modHtml += '<h4 class="section-title" style="margin-top:0">📘 وحدات NTI الرسمية (حسب مستوى السنة)</h4>';
+    modHtml += officialMods.map(function(m, idx){
+      var levelInfo = '';
+      if(official && official.levels){
+        official.levels.forEach(function(l){ if(l.moduleRef === m.id) levelInfo = '<span class="official-badge" style="font-size:0.7rem">NTI رسمي — السنة ' + l.year + '</span>'; });
+      }
+      return '<div class="accordion official"><div class="accordion-header" onclick="toggleAccordion(this)"><div><div class="title">'+m.title+'</div>'+levelInfo+'<div class="meta"><span>🕒 '+m.time+'</span><span>📊 '+m.level+'</span><span>🏅 '+m.cert+'</span></div></div><span class="icon">▼</span></div><div class="accordion-content"><div class="detail-grid"><div class="detail-card"><h6>📜 نظرة عامة (عربي)</h6><p>'+m.overviewAr+'</p></div><div class="detail-card"><h6>📜 Overview (English)</h6><p>'+m.overviewEn+'</p></div><div class="detail-card"><h6>❓ لماذا هذا مهم؟</h6><p>'+m.why+'</p></div><div class="detail-card"><h6>🧠 المفاهيم الرئيسية</h6><ul>'+(m.concepts||[]).map(function(c){ return '<li class="concept-tag">'+c+'</li>'; }).join('')+'</ul></div><div class="detail-card"><h6>🛠️ الأدوات المستخدمة</h6><ul>'+(m.tools||[]).map(function(t){ return '<li class="tool-tag">'+t+'</li>'; }).join('')+'</ul></div><div class="detail-card"><h6>📋 التطبيقات</h6><ul>'+(m.applications||[]).map(function(a){ return '<li>'+a+'</li>'; }).join('')+'</ul></div><div class="detail-card"><h6>⚠️ الأخطاء الشائعة</h6><ul>'+(m.mistakes||[]).map(function(k){ return '<li>'+k+'</li>'; }).join('')+'</ul></div></div><div class="summary-box"><strong>📝 ملخص:</strong> '+m.summary+'</div></div></div>';
+    }).join('');
+  }
+  if(extraMods.length){
+    modHtml += '<h4 class="section-title" style="margin-top:24px">📚 وحدات إضافية (Addition — غير مدرجة في برنامج NTI الرسمي)</h4>';
+    modHtml += extraMods.map(function(m){
+      return '<div class="accordion addition"><div class="accordion-header" onclick="toggleAccordion(this)"><div><div class="title">'+m.title+'</div><div class="meta"><span>🕒 '+m.time+'</span><span>📊 '+m.level+'</span><span>🏅 '+m.cert+'</span></div></div><span class="icon">▼</span></div><div class="accordion-content"><div class="detail-grid"><div class="detail-card"><h6>📜 نظرة عامة (عربي)</h6><p>'+m.overviewAr+'</p></div><div class="detail-card"><h6>📜 Overview (English)</h6><p>'+m.overviewEn+'</p></div><div class="detail-card"><h6>❓ لماذا هذا مهم؟</h6><p>'+m.why+'</p></div><div class="detail-card"><h6>🧠 المفاهيم الرئيسية</h6><ul>'+(m.concepts||[]).map(function(c){ return '<li class="concept-tag">'+c+'</li>'; }).join('')+'</ul></div><div class="detail-card"><h6>🛠️ الأدوات المستخدمة</h6><ul>'+(m.tools||[]).map(function(t){ return '<li class="tool-tag">'+t+'</li>'; }).join('')+'</ul></div><div class="detail-card"><h6>📋 التطبيقات</h6><ul>'+(m.applications||[]).map(function(a){ return '<li>'+a+'</li>'; }).join('')+'</ul></div><div class="detail-card"><h6>⚠️ الأخطاء الشائعة</h6><ul>'+(m.mistakes||[]).map(function(k){ return '<li>'+k+'</li>'; }).join('')+'</ul></div></div><div class="summary-box"><strong>📝 ملخص:</strong> '+m.summary+'</div></div></div>';
+    }).join('');
+  }
+  el.innerHTML = modHtml;
 }
 
 function toggleAccordion(header){
