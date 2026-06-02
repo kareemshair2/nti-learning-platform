@@ -438,6 +438,7 @@ function renderHome(){
       '</div>' +
       '<div class="prog-section">' +
         '<h5>👨‍🎓 شروط القبول (Eligibility)</h5><p style="color:var(--text-sec);margin-bottom:8px"><strong>السنوات:</strong> ' + pi.eligibility.years.join(' - ') + '</p><p style="color:var(--text-sec);margin-bottom:8px"><strong>الكليات:</strong></p><ul>' + pi.eligibility.faculties.map(function(f){ return '<li>' + f + '</li>'; }).join('') + '</ul>' +
+        (pi.eligibility.facultiesExtra ? '<p style="color:var(--text-sec);margin-top:8px"><strong>كليات إضافية (لمسار الفنون الرقمية):</strong></p><ul>' + (pi.eligibility.facultiesExtra.digitalArts||[]).map(function(f){ return '<li>' + f + '</li>'; }).join('') + '</ul>' : '') +
       '</div>' +
       '<div class="prog-section">' +
         '<h5>🎁 المميزات (Benefits)</h5><ul>' + pi.benefits.map(function(b){ return '<li>' + b + '</li>'; }).join('') + '</ul>' +
@@ -446,11 +447,23 @@ function renderHome(){
         '<h5>📝 التسجيل (Registration)</h5><p>رابط التسجيل: <a href="' + pi.registration.link + '" target="_blank" rel="noopener">' + pi.registration.link + '</a></p><p style="color:var(--text-sec);font-size:0.85rem">ملاحظة: ' + pi.registration.noteAr + '</p>' +
       '</div>' +
       '<div class="prog-section">' +
-        '<h5>🤝 التعاون والشراكات</h5><p style="color:var(--text-sec);font-size:0.85rem;line-height:1.7">' + pi.collaborationAr + '</p>' +
+        '<h5>🎯 الاستهداف السنوي</h5><p style="color:var(--text-sec);font-size:0.85rem;line-height:1.7">' + (pi.annualTarget||'') + '</p>' +
       '</div>' +
+      '<div class="prog-section">' +
+        '<h5>🤝 التعاون والشراكات</h5><p style="color:var(--text-sec);font-size:0.85rem;line-height:1.7">' + pi.collaborationAr + '</p>' +
+        (pi.techPartners ? '<p style="margin-top:8px"><strong style="font-size:0.85rem;color:var(--text-muted)">الشركاء التكنولوجيون:</strong> <span class="tag">' + pi.techPartners.join('</span><span class="tag">') + '</span></p>' : '') +
+      '</div>' +
+      '<div class="prog-section">' +
+        '<h5>💻 نموذج التدريب الهجين (Hybrid Model)</h5><p style="color:var(--text-sec);font-size:0.85rem;line-height:1.7">' + (pi.hybridModel ? pi.hybridModel.ar : '') + '</p>' +
+      '</div>' +
+      (pi.strategicContext ? '<div class="prog-section"><h5>🇪🇬 السياق الاستراتيجي الوطني</h5><p style="color:var(--text-sec);font-size:0.85rem;line-height:1.7">' + pi.strategicContext.ar + '</p></div>' : '') +
+      (pi.softSkillsDetail ? '<div class="prog-section"><h5>🧠 المهارات الشخصية (30 ساعة)</h5><div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:8px"><div><strong style="font-size:0.85rem;color:var(--text-muted)">المهارات العامة:</strong><ul>' + pi.softSkillsDetail.general.map(function(s){ return '<li style="font-size:0.85rem;color:var(--text-sec)">'+s+'</li>'; }).join('') + '</ul></div><div><strong style="font-size:0.85rem;color:var(--text-muted)">العمل الحر (Freelancing):</strong><ul>' + pi.softSkillsDetail.freelancing.map(function(s){ return '<li style="font-size:0.85rem;color:var(--text-sec)">'+s+'</li>'; }).join('') + '</ul></div></div></div>' : '') +
+      (pi.officialStatements ? '<div class="prog-section"><h5>💬 تصريحات المسؤولين</h5>' + pi.officialStatements.map(function(s){ return '<div style="padding:10px 14px;background:var(--card);border-radius:var(--radius-sm);margin-bottom:8px;border-right:3px solid var(--primary)"><strong style="color:var(--text)">'+s.person+'</strong> <span style="color:var(--text-muted);font-size:0.8rem">— '+s.role+'</span><p style="color:var(--text-sec);font-size:0.85rem;margin-top:4px">'+s.quoteAr+'</p></div>'; }).join('') + '</div>' : '') +
+      (pi.programs && pi.programs.itidaSystel ? '<div class="prog-section"><h5>📋 ' + pi.programs.itidaSystel.name + '</h5><p style="color:var(--text-sec);font-size:0.85rem;line-height:1.7">' + pi.programs.itidaSystel.descriptionAr + '</p><div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:8px"><div class="prog-card"><h6>🛠️ المحتوى التقني (' + pi.programs.itidaSystel.technicalHours + ' ساعة)</h6><p style="font-size:0.85rem;color:var(--text-sec);line-height:1.7">' + pi.programs.itidaSystel.technicalContentAr + '</p></div><div class="prog-card"><h6>🧠 المهارات (' + pi.programs.itidaSystel.softSkillsHours + ' ساعة)</h6><p style="font-size:0.85rem;color:var(--text-sec);line-height:1.7">' + pi.programs.itidaSystel.softSkillsContentAr + '</p></div></div></div>' : '') +
+      '<div class="prog-section"><h5>📌 برامج NTI الإضافية (إضافة — Additional NTI Programs)</h5><p style="color:var(--text-sec);font-size:0.85rem;line-height:1.7">يقدم المعهد القومي للاتصالات (NTI) برامج تدريبية متخصصة إضافية تشمل <strong>البنية التحتية للشبكات (Network Infrastructure)</strong>، <strong>الافتراضية لمراكز البيانات (Data Center Virtualization)</strong>، و <strong>Fiber To The Home (FTTH)</strong>. لمزيد من التفاصيل، تفضل بزيارة الموقع الرسمي للمعهد.</p></div>' +
       '<div class="prog-source">المصدر الرسمي: <a href="' + pi.source + '" target="_blank" rel="noopener">nti.sci.eg/summertraining</a> | <a href="' + pi.sourceItida + '" target="_blank" rel="noopener">itida.gov.eg</a></div>' +
     '</div>' +
-    '<h3 class="section-title">المسارات التدريبية</h3><div class="track-grid">' +
+    '<h3 class="section-title">المسارات التدريبية (Summer Training Tracks)</h3><div class="track-grid">' +
     list.map(function(t){
       var badge = t.official ? '<span class="official-badge">رسمي</span>' : '<span class="addition-badge">إضافة</span>';
       return '<div class="track-card" onclick="window.location.hash=\''+t.id+'\'" style="--card-accent:'+t.color+';--card-accent-bg:'+t.color+'18;--card-glow:'+t.color+'33"><div class="track-num">' + badge + ' مسار #'+t.num+'</div><div class="icon-wrap">'+(t.num < 10 ? '0'+t.num : t.num)+'</div><h3>'+t.title+'</h3><p>'+t.desc+'</p><button class="btn btn-primary btn-sm">ابدأ التعلم</button></div>';
@@ -560,7 +573,7 @@ function filterGlossary(){
 }
 
 function filterGlossaryCat(btn, cat){
-  document.querySelectorAll('.cat-btn').forEach(function(b){ b.classList.remove('active'); });
+  document.querySelectorAll('#tab-glossary .cat-btn').forEach(function(b){ b.classList.remove('active'); });
   btn.classList.add('active');
   document.querySelectorAll('#glossList .gloss-item').forEach(function(el){
     el.style.display = (cat === 'all' || el.getAttribute('data-cat') === cat) ? '' : 'none';
@@ -589,7 +602,7 @@ function renderInterview(questions){
     types.map(function(t){ return '<button class="btn btn-sm cat-btn'+(t==='hr'?' active':'')+'" onclick="filterInterview(this,\''+t+'\')">'+(typeLabels[t]||t)+'</button>'; }).join('') +
     '</div><div id="interviewList" class="interview-list"></div>';
   interviewType = 'hr';
-  filterInterview(document.querySelector('.cat-btn'), 'hr');
+  filterInterview(document.querySelector('#tab-interview .cat-btn'), 'hr');
 }
 
 function filterInterview(btn, type){
@@ -622,7 +635,7 @@ function randomQuestion(){
   var q = qs[Math.floor(Math.random() * qs.length)];
   var items = document.querySelectorAll('#interviewList .interview-item');
   items.forEach(function(el){ el.classList.remove('open'); });
-  var idx = interviewData.indexOf(q);
+  var idx = qs.indexOf(q);
   if(items[idx]){
     items[idx].classList.add('open');
     items[idx].scrollIntoView({behavior:'smooth',block:'center'});

@@ -8,7 +8,7 @@
   hours: 120,
   techHours: 90,
   softHours: 30,
-  delivery: ['عن بُعد (Online)', 'حضوري (Physical)'],
+  delivery: ['هجين (Hybrid): تعلم عن بُعد تفاعلي + حضور شخصي', 'عن بُعد (Interactive Online)', 'حضوري (Physical On-Site)'],
   coverage: 'جميع محافظات مصر',
   cost: 'مجاني بالكامل - Free Scholarship',
   source: 'https://www.nti.sci.eg/summertraining/',
@@ -45,6 +45,38 @@
   agenda: 'فترة الإجازة الصيفية: يونيو، يوليو، أغسطس، سبتمبر - Summer vacation: June, July, August, September',
   collaborationAr: 'تتعاون ITIDA مع شركات الاتصالات والتكنولوجيا في إطار المسؤولية المجتمعية للشركات (CSR)، وأيضًا مع المعهد القومي للاتصالات (NTI) لخبرته التدريبية الواسعة وشراكاته مع شركات التكنولوجيا العالمية.',
   collaborationEn: 'ITIDA collaborates with telecom and technology companies through CSR initiatives, and with NTI for its wide technical training experience and diverse partnerships with global tech companies.',
+  annualTarget: '1,500 طالب جامعي سنوياً',
+  hybridModel: {
+    ar: 'نموذج التدريب الهجين (Hybrid Training Model) يجمع بين التعلم عن بُعد التفاعلي (Interactive Distance Education) والحضور الشخصي (Physical Learning) في فروع NTI المنتشرة بجميع محافظات مصر.',
+    en: 'The Hybrid Training Model combines Interactive Distance Education (Online) with Physical Learning (On-Site) at NTI branches across all Egyptian governorates.'
+  },
+  strategicContext: {
+    ar: 'يأتي البرنامج ضمن أولويات وزارة الاتصالات وتكنولوجيا المعلومات (MCIT) الاستراتيجية لبناء القدرات الرقمية للشباب المصري.',
+    en: 'The program is part of the Ministry of Communications and Information Technology (MCIT) strategic priorities for building digital capabilities of Egyptian youth.'
+  },
+  officialStatements: [
+    { person: 'Amr Mahfouz', role: 'CEO of ITIDA', quoteAr: 'نحرص على توفير التدريب التقني للطلاب لسد الفجوة بين الجامعات وسوق العمل.', quoteEn: 'We are keen on providing technical training to students to bridge the gap between universities and the labor market.' },
+    { person: 'Prof. Iman Ashour', role: 'Director of NTI', quoteAr: 'المعهد القومي للاتصالات يقدم خبرته التدريبية الواسعة وشراكاته مع شركات التكنولوجيا العالمية.', quoteEn: 'NTI provides its extensive training expertise and partnerships with global technology companies.' }
+  ],
+  techPartners: ['Huawei', 'Amazon', 'Cisco', 'VMware'],
+  softSkillsDetail: {
+    general: [
+      'التواصل والعرض التقديمي (Communication & Presentation)',
+      'القيادة والعمل الجماعي (Leadership & Teamwork)',
+      'إدارة الوقت والكتابة التجارية (Time Management & Business Writing)',
+      'التفكير النقدي وحل المشكلات (Critical Thinking & Problem Solving)',
+      'التفاوض وحل النزاعات (Negotiation & Conflict Resolution)',
+      'المقابلات وكتابة السيرة الذاتية (Interview & CV Writing)'
+    ],
+    freelancing: [
+      'مقدمة عن العمل الحر (Introduction to Freelancing)',
+      'تحديد الخدمة والعرض (Service & Offer Definition)',
+      'هيكل التسعير (Pricing Structure)',
+      'إدارة المشاريع (Project Management)',
+      'بناء المحفظة والعلامة الشخصية (Portfolio & Personal Brand)',
+      'إنشاء صفحة هبوط على منصات مثل Upwork (Landing Page on Upwork)'
+    ]
+  },
   programs: {
     itidaNti: {
       name: 'ITIDA-NTI Summer Training',
@@ -59,7 +91,7 @@
       softSkillsHours: 30,
       softSkillsContentAr: 'المهارات العامة: التواصل، المقابلات الشخصية، العرض والتقديم. مهارات القيادة: العمل الجماعي، اتخاذ القرارات وحل المشكلات، إدارة الوقت. مهارات العمل الحر: مقدمة في أمن المعلومات والخصوصية.',
       softSkillsContentEn: 'General Skills: Communication, Interview, Presentation. Leadership: Teamwork, Decision-making, Time Management. Freelancing: Introduction to information security and privacy.',
-      technicalContentAr: 'مقدمة في الاتصالات - الاتصالات في السلامة العامة - الاتصالات بالميكروويف وال宽带 - اتصالات الألياف الضوئية - أنظمة CCTV - الاتصالات الفضائية - ورشة عمل عملية',
+      technicalContentAr: 'مقدمة في الاتصالات - الاتصالات في السلامة العامة - الاتصالات بالميكروويف والبرودباند - اتصالات الألياف الضوئية - أنظمة CCTV - الاتصالات الفضائية - ورشة عمل عملية',
       technicalContentEn: 'Introduction to Telecommunications - Public Safety Communication - Microwave and Broadband Communication - Fiber Optics Communication - CCTV Systems - Satellite Communication - Practical Workshop'
     }
   }
@@ -118,6 +150,15 @@ window.trackContent = {
       ],
     },
     modules: [
+      { id: 'net-infra', title: 'Network Infrastructure Fundamentals — المستوى الأول الرسمي', level: 'أساسي', time: '15 ساعة', cert: 'CCNA',
+        overviewAr: 'البنية التحتية للشبكات: أساسيات الشبكات - OSI، TCP/IP، التوجيه (Routing)، التبديل (Switching)، العناوين (IP Addressing & Subnetting). هذا الموديول يقابل السنة الأولى من المسار الرسمي للأمن السيبراني.',
+        overviewEn: 'Network Infrastructure fundamentals: OSI model, TCP/IP stack, routing, switching, IP addressing and subnetting. This module corresponds to the official 1st year of the Cybersecurity track.',
+        why: 'بدون فهم البنية التحتية للشبكات، لا يمكنك فهم أمن الشبكات. هي الأساس الذي يُبنى عليه كل شيء.',
+        concepts: ['OSI Model (7 Layers)', 'TCP/IP Stack', 'IPv4 & IPv6 Addressing', 'Subnetting (VLSM, CIDR)', 'Routing (Static, OSPF, EIGRP)', 'Switching (VLANs, STP)', 'NAT & PAT'],
+        tools: ['Cisco Packet Tracer', 'Wireshark', 'GNS3', 'PuTTY', 'SolarWinds'],
+        applications: ['تصميم شبكة لشركة صغيرة', 'تقسيم الشبكة باستخدام VLANs', 'توجيه حركة المرور بين فروع الشركة'],
+        mistakes: ['تقسيم شبكي غير صحيح (Subnetting)', 'عدم فهم الفرق بين TCP و UDP', 'إهمال أمن أجهزة الشبكة'],
+        summary: 'البنية التحتية للشبكات هي العمود الفقري لأي نظام تقني. أتقنها قبل الانتقال للأمن.' },
       { id: 'net-sec', title: 'Network Security Fundamentals', level: 'مبتدئ', time: '15 ساعة', cert: 'CCNA Security',
         overviewAr: 'أساسيات أمن الشبكات: كيف نحمي الشبكات من الاختراق وكيف نؤمن نقل البيانات.', 
         overviewEn: 'Network Security is a set of hardware and software technologies designed to protect the network infrastructure.',
@@ -608,6 +649,15 @@ window.trackContent = {
         overviewAr: 'هندسة البيانات: بناء البنية التحتية لجمع وتخزين ومعالجة البيانات. MLOps: إدارة دورة حياة نماذج ML.', overviewEn: 'Data Engineering builds data infrastructure. MLOps manages the ML model lifecycle in production.', why: 'Netflix يعالج 1 تريليون حدث يوميًا - بدون Data Engineering هذا مستحيل.', concepts: ['ETL/ELT Pipelines', 'Data Warehousing (Snowflake, BigQuery)', 'Big Data (Spark)', 'MLOps (Model Versioning, Deployment, Monitoring)', 'Feature Store', 'Model Drift'], tools: ['Apache Spark', 'Apache Airflow', 'Docker', 'MLflow', 'Kubeflow'], applications: ['Netflix يعالج تريليونات الأحداث', 'تحديث نماذج التوصيات يوميًا', 'مراقبة أداء النماذج'], mistakes: ['إهمال مراقبة النموذج بعد النشر', 'عدم توثيق الـ Pipelines', 'تجاهل Data Quality'], summary: 'Data Engineering هو العمود الفقري لأي مؤسسة تعتمد على البيانات.' },
       { id: 'bi', title: 'Business Intelligence & Visualization', level: 'مبتدئ-متوسط', time: '10 ساعة', cert: 'None',
         overviewAr: 'ذكاء الأعمال: تحويل البيانات إلى تقارير ولوحات معلومات لدعم اتخاذ القرارات.', overviewEn: 'BI transforms raw data into actionable insights through dashboards and reports.', why: 'القرارات المبنية على البيانات تتفوق على القرارات الحدسية.', concepts: ['Data Visualization (Bar, Line, Heatmap)', 'Dashboards', 'KPI Tracking', 'Storytelling with Data', 'Self-Service BI'], tools: ['Tableau', 'Power BI', 'Looker (Google)', 'Metabase'], applications: ['لوحة مبيعات CEO', 'تتبع أداء الحملات التسويقية', 'تقارير شهرية للشركات'], mistakes: ['معلومات زائدة (Information Overload)', 'ألوان مضللة', 'تجاهل الجمهور المستهدف'], summary: 'BI يحول البيانات إلى قرارات.' },
+      { id: 'iot-ds', title: 'Internet of Things (IoT) Applications — المستوى الثالث الرسمي', level: 'متوسط', time: '20 ساعة', cert: 'None',
+        overviewAr: 'إنترنت الأشياء (IoT): ربط الأجهزة المادية بالإنترنت لجمع البيانات والتحكم عن بُعد. هذا الموديول يقابل السنة الثالثة من المسار الرسمي لعلوم البيانات.',
+        overviewEn: 'Internet of Things (IoT): connecting physical devices to the internet for data collection and remote control. This module corresponds to the official 3rd year of the Data Science track.',
+        why: 'IoT يربط العالم المادي بالرقمي. عدد أجهزة IoT سيتجاوز 30 مليار جهاز بحلول 2030.',
+        concepts: ['IoT Architecture (Perception, Network, Application)', 'Sensors & Actuators', 'IoT Protocols (MQTT, CoAP, HTTP)', 'Edge vs Cloud Computing', 'IoT Security & Privacy', 'Data Analytics for IoT'],
+        tools: ['Raspberry Pi / ESP32', 'Arduino', 'AWS IoT Core', 'Node-RED', 'ThingSpeak'],
+        applications: ['Smart Home (منازل ذكية)', 'Smart Agriculture (زراعة ذكية)', 'Industrial IoT (IIoT)', 'Smart Healthcare (رعاية صحية ذكية)', 'Smart Cities (مدن ذكية)'],
+        mistakes: ['إهمال أمن أجهزة IoT', 'عدم مراعاة استهلاك الطاقة', 'تجاهل معالجة البيانات الضخمة من الأجهزة'],
+        summary: 'IoT هو الجسر بين العالم المادي والرقمي - أجهزة ذكية، بيانات ضخمة، وقرارات أذكى.' },
     ],
     glossary: [
       { term: 'Machine Learning', arabic: 'تعلم آلي', explanation: 'نماذج تتعلم من البيانات بدون برمجة صريحة', category: 'أساسيات' },
@@ -774,6 +824,15 @@ window.trackContent = {
         overviewAr: 'تصميم البنية التحتية السحابية المتقدمة وتحسين التكاليف: Well-Architected Framework، High Availability، Disaster Recovery.',
         overviewEn: 'Advanced cloud architecture design with Well-Architected Framework, HA, DR, and cost optimization.',
         why: 'تصميم البنية التحتية بشكل صحيح يوفر الملايين ويضمن استمرارية الأعمال.', concepts: ['Well-Architected Framework (6 Pillars)', 'High Availability (Multi-AZ, ELB)', 'Disaster Recovery (Backup, RPO/RTO)', 'Auto Scaling', 'Cost Management (Reserved/Spot Instances)'], tools: ['AWS Well-Architected Tool', 'AWS Cost Explorer', 'AWS Trusted Advisor'], applications: ['تطبيق بنكي يحتاج 99.99% توفر', 'شركة ناشئة توفر 60% بـ Spot Instances'], mistakes: ['إهمال Cost Optimization', 'Single Point of Failure', 'عدم اختبار Disaster Recovery'], summary: 'اعتمد أفضل الممارسات لبناء أنظمة موثوقة وموفرة.' },
+      { id: 'dc-virt', title: 'Data Center Virtualization (إضافة)', level: 'متوسط-متقدم', time: '15 ساعة', cert: 'VMware VCP',
+        overviewAr: 'الافتراضية لمراكز البيانات (Data Center Virtualization): VMware vSphere، Hyper-V، المحاكاة الافتراضية للخوادم والتخزين والشبكات، وإدارة مراكز البيانات.',
+        overviewEn: 'Data Center Virtualization: VMware vSphere/Hyper-V, server/storage/network virtualization, and data center management.',
+        why: 'مراكز البيانات الحديثة تعتمد على الافتراضية لتحقيق أقصى استفادة من الموارد وتقليل التكاليف.',
+        concepts: ['VMware vSphere (ESXi, vCenter)', 'Hyper-V & SCVMM', 'Storage Virtualization (SAN, NAS, vSAN)', 'Network Virtualization (NSX)', 'Virtual Desktop Infrastructure (VDI)', 'Backup & DR for Virtual Environments'],
+        tools: ['VMware vSphere', 'Microsoft Hyper-V', 'VMware NSX', 'Veeam Backup', 'vRealize Suite'],
+        applications: ['دمج خوادم متعددة على مضيف واحد', 'إنشاء بيئات اختبار افتراضية', 'التعافي من الكوارث باستخدام الـ VMs'],
+        mistakes: ['Overallocation (تخصيص موارد أكثر من المتاح)', 'إهمال Snapshots management', 'عدم تكوين High Availability'],
+        summary: 'Data Center Virtualization هو أساس مراكز البيانات الحديثة - وفر في التكاليف، زن في المرونة.' },
     ],
     glossary: [
       { term: 'Cloud Computing', arabic: 'حوسبة سحابية', explanation: 'تقديم خدمات تقنية عبر الإنترنت', category: 'أساسيات' },
@@ -1330,12 +1389,11 @@ window.trackContent = {
   },
   'digital-arts': {
     official: {
-      targetAudience: 'BIS, Mass Communication, Fine Arts, Applied Arts, Specific Education',
+      targetAudience: 'Mass Communication, Fine Arts, Applied Arts, Specific Education',
       softSkills: 'Freelance',
       levels: [
         { year: 1, title: 'Graphic Design', titleAr: 'التصميم الجرافيكي' },
-        { year: 2, title: 'Digital Marketing / 2D Motion Graphics', titleAr: 'التسويق الرقمي / الموشن جرافيك' },
-        { year: 3, title: 'Digital Marketing', titleAr: 'التسويق الرقمي' }
+        { year: 2, title: '2D Animation', titleAr: 'الرسوم المتحركة ثنائية الأبعاد' }
       ]
     },
     intro: {
