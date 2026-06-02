@@ -132,7 +132,7 @@ window.trackContent = {
       levels: [
         { year: 1, title: 'Network Infrastructure', titleAr: 'البنية التحتية للشبكات', moduleRef: 'net-infra' },
         { year: 2, title: 'Network Security', titleAr: 'أمن الشبكات', moduleRef: 'net-sec' },
-        { year: 3, title: 'Fortinet Cybersecurity', titleAr: 'الأمن السيبراني من Fortinet', moduleRef: null }
+        { year: 3, title: 'Fortinet Cybersecurity', titleAr: 'الأمن السيبراني من Fortinet', moduleRef: 'fortinet' }
       ]
     },
     intro: {
@@ -184,6 +184,15 @@ window.trackContent = {
         mistakes: ['إعداد Firewalls بدون قواعد واضحة', 'إهمال تحديث أجهزة الشبكة', 'عدم تقسيم الشبكة (Segmentation)'],
         summary: 'أمن الشبكات هو خط الدفاع الأول. بدون شبكة آمنة، كل شيء آخر معرض للخطر.'
       },
+      { id: 'fortinet', title: 'Fortinet Cybersecurity — المستوى الثالث الرسمي', level: 'متوسط-متقدم', time: '15 ساعة', cert: 'Fortinet NSE',
+        overviewAr: 'أمن Fortinet: تكوين وإدارة أجهزة FortiGate، FortiAnalyzer، FortiSIEM، و FortiEDR. يغطي هذا الموديول حلول Fortinet المتكاملة للأمن السيبراني ويقابل السنة الثالثة من المسار الرسمي.',
+        overviewEn: 'Fortinet Cybersecurity: configuring and managing FortiGate, FortiAnalyzer, FortiSIEM, and FortiEDR. Covers Fortinet integrated security solutions. Corresponds to the official 3rd year of the Cybersecurity track.',
+        why: 'Fortinet هو أحد أشهر مزودي حلول الأمن السيبراني عالمياً، وشهادات NSE مطلوبة بكثرة في سوق العمل.',
+        concepts: ['FortiGate Firewall (Policy, NAT, VPN)', 'FortiAnalyzer (Logging & Reporting)', 'FortiSOAR (SOAR)', 'FortiSIEM (SIEM)', 'FortiEDR (Endpoint Security)', 'Security Fabric Architecture', 'NSE Certification Path'],
+        tools: ['FortiGate VM', 'FortiAnalyzer', 'FortiClient', 'FortiManager', 'FortiSOAR'],
+        applications: ['تأمين شبكة شركة متوسطة باستخدام FortiGate', 'إعداد SIEM باستخدام FortiSIEM', 'إدارة الحوادث باستخدام FortiSOAR'],
+        mistakes: ['عدم تحديث FortiGate firmware', 'إعداد قواعد Firewall غير صحيحة', 'إهمال مراقبة السجلات في FortiAnalyzer'],
+        summary: 'Fortinet يقدم حلول أمن متكاملة من firewall إلى SIEM إلى endpoint. أتقن NSE لتصبح خبير أمن معتمد من Fortinet.' },
       { id: 'eth-hack', title: 'Ethical Hacking & Penetration Testing', level: 'متوسط', time: '20 ساعة', cert: 'CEH / OSCP',
         overviewAr: 'الاختراق الأخلاقي: محاكاة هجمات حقيقية على الأنظمة بهدف اكتشاف الثغرات قبل أن يكتشفها المخترقون الحقيقيون.',
         overviewEn: 'Ethical Hacking is the authorized practice of bypassing system security to identify potential data breaches and threats.',
@@ -378,7 +387,7 @@ window.trackContent = {
       levels: [
         { year: 1, title: 'UI & UX Design', titleAr: 'تصميم واجهات المستخدم', moduleRef: 'ui-ux' },
         { year: 2, title: 'Web Design', titleAr: 'تصميم الويب', moduleRef: 'web-fund' },
-        { year: 3, title: 'Full Stack Web Development (MEAN Stack)', titleAr: 'تطوير الويب المتكامل (MEAN Stack)', moduleRef: null },
+        { year: 3, title: 'Full Stack Web Development (MEAN Stack)', titleAr: 'تطوير الويب المتكامل (MEAN Stack)', moduleRef: 'mean-stack' },
         { year: 3, title: 'Full Stack Web Development (PHP)', titleAr: 'تطوير الويب المتكامل (PHP)', moduleRef: 'fullstack-php' }
       ]
     },
@@ -483,6 +492,15 @@ window.trackContent = {
         mistakes: ['تجاهل Testing', 'إهمال Documentation', 'عدم استخدام Version Control بشكل صحيح'],
         summary: 'هندسة البرمجيات تحول الكود العادي إلى كود احترافي.'
       },
+      { id: 'mean-stack', title: 'Full Stack Web Development (MEAN Stack) — المستوى الثالث الرسمي', level: 'متوسط-متقدم', time: '15 ساعة', cert: 'MongoDB / AWS Developer',
+        overviewAr: 'تطوير الويب المتكامل باستخدام MEAN Stack: MongoDB (قاعدة بيانات)، Express.js (إطار Backend)، Angular (واجهة أمامية)، Node.js (بيئة تشغيل). بناء تطبيقات ويب كاملة من الصفر إلى النشر.',
+        overviewEn: 'Full Stack Web Development with MEAN Stack: MongoDB (database), Express.js (backend framework), Angular (frontend), Node.js (runtime). Build complete web apps from scratch to deployment.',
+        why: 'MEAN Stack يستخدم JavaScript في كل الطبقات (Full-Stack JavaScript)، مما يسهل التبديل بين frontend و backend ويوفر وقت التطوير.',
+        concepts: ['MongoDB (Schemas, Aggregation, Indexes)', 'Express.js (Routing, Middleware, Error Handling)', 'Angular (Components, Services, RxJS)', 'Node.js (Event Loop, Streams, Cluster)', 'REST API with Express + MongoDB', 'JWT Authentication & Authorization'],
+        tools: ['MongoDB Atlas / Compass', 'Express.js', 'Angular CLI', 'Node.js / npm', 'Postman', 'Mongoose ODM'],
+        applications: ['بناء تطبيق إدارة مهام Full-Stack', 'تطبيق متجر إلكتروني باستخدام MEAN', 'نظام إدارة محتوى (CMS) بواسطة MEAN'],
+        mistakes: ['عدم استخدام Mongoose Validation', 'إهمال الـ Error Handling في Express', 'تجاهل أن Angular يتطلب RxJS للتعامل مع البيانات غير المتزامنة'],
+        summary: 'MEAN Stack هو الخيار الأمثل لمطوري JavaScript الذين يريدون بناء تطبيقات Full-Stack من طرف لآخر بنفس اللغة.' },
       { id: 'fullstack-php', title: 'Full Stack Web Development (PHP) — المستوى الثالث الرسمي', level: 'متوسط-متقدم', time: '15 ساعة', cert: 'Zend PHP / Laravel',
         overviewAr: 'تطوير الويب المتكامل باستخدام PHP مع Laravel: بناء REST APIs، إدارة قواعد البيانات، المصادقة، ونشر التطبيقات.',
         overviewEn: 'Full Stack Web Development with PHP and Laravel framework: building REST APIs, database management, authentication, and application deployment.',
@@ -493,6 +511,7 @@ window.trackContent = {
         mistakes: ['عدم اتباع PSR Standards', 'إهمال الـ Validation', 'كتابة SQL مباشرة بدون Eloquent'],
         summary: 'PHP مع Laravel الخيار الأمثل للمشاريع الكبيرة. أتقنها لتكون Full Stack متكامل.' },
     ],
+    glossary: [
       { term: 'Algorithm', arabic: 'خوارزمية', explanation: 'خطوات محددة لحل مشكلة', category: 'أساسيات' },
       { term: 'Variable', arabic: 'متغير', explanation: 'مكان في الذاكرة يخزن قيمة', category: 'أساسيات' },
       { term: 'Function', arabic: 'دالة', explanation: 'قطعة كود تقوم بمهمة محددة', category: 'أساسيات' },
@@ -1114,7 +1133,7 @@ window.trackContent = {
       softSkills: 'Freelance',
       levels: [
         { year: 1, title: 'Microcontroller-Based Systems', titleAr: 'أنظمة الميكروكنترولر', moduleRef: 'microcontrollers' },
-        { year: 2, title: 'Digital Design using FPGA', titleAr: 'التصميم الرقمي باستخدام FPGA', moduleRef: null }
+        { year: 2, title: 'Digital Design using FPGA', titleAr: 'التصميم الرقمي باستخدام FPGA', moduleRef: 'fpga-design' }
       ]
     },
     intro: {
@@ -1203,6 +1222,15 @@ window.trackContent = {
         applications: ['Smart home sensor with MQTT', 'ESP32 weather station', 'Raspberry Pi home automation hub'],
         mistakes: ['عدم تأمين أجهزة IoT', 'إرسال بيانات كثيرة جداً (battery drain)', 'تجاهل network latency'],
         summary: 'IoT connects the physical world to the cloud. Build end-to-end solutions with sensors, microcontrollers, and cloud platforms.' },
+      { id: 'fpga-design', title: 'Digital Design using FPGA — المستوى الثاني الرسمي', level: 'متقدم', time: '45 ساعة', cert: 'N/A',
+        overviewAr: 'التصميم الرقمي باستخدام FPGA: لغة VHDL/Verilog، تصميم الدوائر الرقمية، المحاكاة، والتنفيذ على أجهزة FPGA. يغطي هذا الموديول السنة الثانية من المسار الرسمي للإلكترونيات.',
+        overviewEn: 'Digital Design using FPGA: VHDL/Verilog, digital circuit design, simulation, synthesis, and FPGA implementation. Covers the official 2nd year of the Electronics track.',
+        why: 'FPGA يستخدم في مجالات حيوية مثل الاتصالات (5G)، معالجة الإشارات، التشفير، والأنظمة المدمجة عالية الأداء.',
+        concepts: ['VHDL & Verilog (RTL Design)', 'Flip-Flops, Counters, Registers', 'Finite State Machines (FSM)', 'Testbenches & Simulation', 'Synthesis & Timing Analysis', 'FPGA Architecture (LUT, DSP, BRAM)', 'Xilinx Vivado / Intel Quartus'],
+        tools: ['Xilinx Vivado', 'Intel Quartus Prime', 'ModelSim / Questa', 'GTKWave', 'Digilent Basys 3 / Nexys A7'],
+        applications: ['VGA controller on FPGA', 'UART communication module', 'Simple RISC processor design'],
+        mistakes: ['عدم استخدام Testbench قبل التنفيذ', 'تجاهل timing constraints', 'كتابة كود غير قابل للتطبيق (synthesis)'],
+        summary: 'FPGA يسمح بتصميم دوائر رقمية مخصصة بسرعة. أتقن VHDL/Verilog لتصميم أنظمة رقمية معقدة.' },
     ],
     glossary: [
       { term: 'Microcontroller', arabic: 'متحكم دقيق', explanation: 'شريحة تحتوي على معالج وذاكرة ومدخلات/مخرجات في شريحة واحدة (Arduino, STM32).', category: 'Embedded Systems' },
@@ -1273,7 +1301,7 @@ window.trackContent = {
       softSkills: 'Freelance',
       levels: [
         { year: 1, title: 'Machine Learning', titleAr: 'تعلم الآلة', moduleRef: 'ml-fund' },
-        { year: 2, title: 'AI For Business / Computer Vision', titleAr: 'AI للأعمال / رؤية حاسوبية', moduleRef: null },
+        { year: 2, title: 'Computer Vision', titleAr: 'الرؤية الحاسوبية', moduleRef: 'cv-ai' },
         { year: 3, title: 'Natural Language Processing (NLP)', titleAr: 'معالجة اللغة الطبيعية', moduleRef: 'nlp-ai' }
       ]
     },
@@ -1417,7 +1445,7 @@ window.trackContent = {
       softSkills: 'Freelance',
       levels: [
         { year: 1, title: 'Graphic Design', titleAr: 'التصميم الجرافيكي', moduleRef: 'graphic-design' },
-        { year: 2, title: '2D Animation', titleAr: 'الرسوم المتحركة ثنائية الأبعاد', moduleRef: null }
+        { year: 2, title: '2D Animation', titleAr: 'الرسوم المتحركة ثنائية الأبعاد', moduleRef: 'animation-2d' }
       ]
     },
     intro: {
@@ -1504,6 +1532,15 @@ window.trackContent = {
         applications: ['Animated explainer video', 'Logo reveal animation', 'Music video VFX compositing'],
         mistakes: ['إهمال timing في التحريك', 'استخدام الكثير من التأثيرات', 'عدم الاهتمام بالـ Frame Rate'],
         summary: 'Motion graphics make static designs come alive. Learn animation principles to create stunning visual narratives.' },
+      { id: 'animation-2d', title: '2D Animation — المستوى الثاني الرسمي', level: 'متوسط-متقدم', time: '40 ساعة', cert: 'Adobe Animate',
+        overviewAr: 'الرسوم المتحركة ثنائية الأبعاد: مبادئ التحريك، Timing & Spacing، تحريك الشخصيات، قصص مصورة (Storyboarding)، وإنتاج فيديو كرتوني قصير. هذا الموديول يقابل السنة الثانية من المسار الرسمي للفنون الرقمية.',
+        overviewEn: '2D Animation: animation principles, timing & spacing, character animation, storyboarding, and short animation production. Covers the official 2nd year of the Digital Arts track.',
+        why: 'الرسوم المتحركة مطلوبة في مجالات الإعلانات، الألعاب، الأفلام، والمحتوى التعليمي.',
+        concepts: ['12 Principles of Animation', 'Timing & Spacing', 'Squash & Stretch', 'Character Rigging (Cut-out & Bones)', 'Lip Sync', 'Storyboarding & Animatics'],
+        tools: ['Adobe Animate', 'Toon Boom Harmony', 'TVPaint', 'Spine 2D', 'OpenToonz'],
+        applications: ['أنيميشن تعليمي قصير', 'تحريك شعار (Logo Animation)', '2D Game Character Animation'],
+        mistakes: ['إهمال Timing & Spacing', 'عدم استخدام Reference', 'تجاهل مبدأ Anticipation', 'تحريك بدون Storyboard'],
+        summary: '2D Animation يحول الرسومات الثابتة إلى حياة وحركة. أتقن المبادئ الـ 12 لتصبح محركًا محترفًا.' },
     ],
     glossary: [
       { term: 'RGB', arabic: 'أحمر-أخضر-أزرق', explanation: 'نظام ألوان يستخدم للشاشات الرقمية حيث يتم خلط الأحمر والأخضر والأزرق.', category: 'Color Theory' },
@@ -1578,8 +1615,8 @@ window.trackContent = {
       softSkills: 'Freelance',
       levels: [
         { year: 1, title: 'Digital Marketing Fundamentals', titleAr: 'أساسيات التسويق الرقمي', moduleRef: 'marketing-fundamentals' },
-        { year: 2, title: 'Advanced Digital Marketing & Paid Ads', titleAr: 'التسويق الرقمي المتقدم والإعلانات المدفوعة', moduleRef: null },
-        { year: 3, title: 'Digital Marketing Strategy & Analytics', titleAr: 'استراتيجية التسويق الرقمي والتحليلات', moduleRef: null }
+        { year: 2, title: 'Advanced Digital Marketing & Paid Ads', titleAr: 'التسويق الرقمي المتقدم والإعلانات المدفوعة', moduleRef: 'ads-advanced' },
+        { year: 3, title: 'Digital Marketing Strategy & Analytics', titleAr: 'استراتيجية التسويق الرقمي والتحليلات', moduleRef: 'marketing-strategy' }
       ]
     },
     intro: {
@@ -1675,6 +1712,24 @@ window.trackContent = {
         applications: ['Setting up Google Shopping campaign', 'Abandoned cart email sequence', 'Product page A/B testing'],
         mistakes: ['Product feed غير محسن', 'تجاهل mobile optimization', 'عدم استهداف remarketing'],
         summary: 'E-commerce marketing requires understanding both advertising and the online shopping experience.' },
+      { id: 'ads-advanced', title: 'Advanced Digital Marketing & Paid Ads — المستوى الثاني الرسمي', level: 'متقدم', time: '30 ساعة', cert: 'Google Ads / Meta Certified',
+        overviewAr: 'التسويق الرقمي المتقدم والإعلانات المدفوعة: Google Ads المتقدم، إعلانات Meta، إستراتيجيات العروض، تحسين التحويل، Remarketing، وتحليل أداء الحملات متعددة القنوات. هذا الموديول يقابل السنة الثانية من المسار الرسمي للتسويق الرقمي.',
+        overviewEn: 'Advanced Digital Marketing & Paid Ads: advanced Google Ads, Meta Ads, bidding strategies, conversion optimization, multi-channel campaign management, and performance analysis. Covers the official 2nd year of the Digital Marketing track.',
+        why: 'الإعلانات المدفوعة هي المحرك الرئيسي للنمو السريع لأي نشاط تجاري على الإنترنت.',
+        concepts: ['Advanced Google Ads (Search, Display, Video, Shopping)', 'Meta Ads (Facebook, Instagram, Retargeting)', 'Bid Strategies (Target CPA, Target ROAS)', 'Conversion Tracking & Google Tag Manager', 'Multi-Channel Attribution', 'A/B Testing & Experiment Design'],
+        tools: ['Google Ads Editor', 'Meta Business Suite', 'Google Tag Manager', 'Optmyzr', 'Supermetrics'],
+        applications: ['Multi-channel campaign for e-commerce brand', 'Lead generation campaign with CRM integration', 'Retargeting funnel for abandoned cart recovery'],
+        mistakes: ['عدم ربط Google Ads مع Analytics', 'تشغيل إعلانات بدون استهداف صحيح', 'تجاهل تحسين Quality Score', 'إهمال الـ A/B Testing المستمر'],
+        summary: 'الإعلانات المدفوعة تتطلب استراتيجية وتحليل مستمر. أتقن إدارة الميزانيات وتحسين الحملات للوصول لأقصى عائد استثمار.' },
+      { id: 'marketing-strategy', title: 'Digital Marketing Strategy & Analytics — المستوى الثالث الرسمي', level: 'متقدم', time: '30 ساعة', cert: 'Google Analytics / HubSpot',
+        overviewAr: 'استراتيجية التسويق الرقمي والتحليلات: بناء إستراتيجية تسويق متكاملة، تحليل البيانات، إعداد لوحات القيادة (Dashboards)، نماذج الإحالة (Attribution)، وتحسين رحلة العميل. هذا الموديول يقابل السنة الثالثة من المسار الرسمي للتسويق الرقمي.',
+        overviewEn: 'Digital Marketing Strategy & Analytics: building integrated marketing strategy, data analysis, executive dashboards, attribution modeling, customer journey optimization, and ROI reporting. Covers the official 3rd year of the Digital Marketing track.',
+        why: 'المسوقون المحترفون لا يديرون إعلانات فقط - يبنون استراتيجيات ويحللون البيانات لتحقيق أهداف العمل.',
+        concepts: ['Marketing Strategy Framework (SOSTAC)', 'Customer Journey Mapping', 'Attribution Modeling (First-click, Last-click, Linear, Data-driven)', 'Executive Dashboards & KPI Trees', 'Cohort Analysis & Customer Lifetime Value', 'Growth Loops vs Funnels'],
+        tools: ['Google Analytics 4 (GA4)', 'Google Data Studio (Looker)', 'HubSpot / Salesforce', 'Hotjar / FullStory', 'Excel / Google Sheets (Advanced)'],
+        applications: ['Building a quarterly marketing strategy', 'Executive dashboard for CMO', 'Customer journey analysis for SaaS product'],
+        mistakes: ['إستراتيجية بدون أهداف واضحة (OKRs)', 'إهمال التحليل التنافسي', 'عدم توثيق العمليات والمعايير', 'تجاهل تحليل العائد على الاستثمار'],
+        summary: 'استراتيجية التسويق المبنية على البيانات هي الفرق بين مسوق عادي ومدير تسويق محترف.' },
     ],
     glossary: [
       { term: 'SEO', arabic: 'تحسين محركات البحث', explanation: 'عملية تحسين موقعك لظهور أعلى في نتائج البحث العضوية المجانية.', category: 'Organic Marketing' },
